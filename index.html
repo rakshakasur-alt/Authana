@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MessyKitchen - Good Food, No Fuss</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#474747",
+                        "inverse-surface": "#2f3130",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#73d4ef",
+                        "outline": "#8b716a",
+                        "surface-container": "#efeeec",
+                        "on-tertiary-fixed": "#001f27",
+                        "tertiary-fixed": "#afecff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#656464",
+                        "on-tertiary-fixed-variant": "#004e5d",
+                        "primary-fixed-dim": "#ffb5a0",
+                        "surface-container-high": "#e9e8e6",
+                        "on-surface-variant": "#58423c",
+                        "primary": "#a33818",
+                        "surface-container-highest": "#e3e2e0",
+                        "tertiary": "#006578",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "error": "#ba1a1a",
+                        "primary-container": "#c44f2e",
+                        "on-background": "#1a1c1b",
+                        "inverse-primary": "#ffb5a0",
+                        "primary-fixed": "#ffdbd1",
+                        "secondary-container": "#e4e2e1",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#faf9f7",
+                        "on-primary-container": "#fffbff",
+                        "tertiary-container": "#008098",
+                        "on-primary-fixed-variant": "#862303",
+                        "surface-variant": "#e3e2e0",
+                        "secondary-fixed-dim": "#c8c6c6",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#1a1c1b",
+                        "outline-variant": "#dfc0b8",
+                        "on-tertiary-container": "#f9fdff",
+                        "surface-container-low": "#f4f3f1",
+                        "surface-tint": "#a63a1a",
+                        "inverse-on-surface": "#f1f1ef",
+                        "on-primary-fixed": "#3b0900",
+                        "on-secondary": "#ffffff",
+                        "background": "#faf9f7",
+                        "surface": "#faf9f7",
+                        "secondary-fixed": "#e4e2e1",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#5f5e5e",
+                        "surface-dim": "#dadad8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-lg": "64px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "stack-sm": "12px",
+                        "stack-md": "32px",
+                        "margin-desktop": "64px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Bricolage Grotesque"],
+                        "label-caps": ["JetBrains Mono"],
+                        "body-lg": ["Work Sans"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "display-lg": ["Bricolage Grotesque"],
+                        "body-md": ["Work Sans"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["24px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom Sketchy Styles */
+        .sketch-border {
+            border: 2px solid #1a1c1b;
+            border-radius: 4px 6px 3px 5px / 5px 3px 6px 4px; /* Organic feel */
+        }
+        .sketch-shadow {
+            box-shadow: 4px 4px 0 #1a1c1b;
+        }
+        .sketch-button {
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .sketch-button:hover {
+            transform: scale(1.05) rotate(1deg);
+        }
+        .sketch-button:active {
+            transform: scale(0.95);
+        }
+        
+        /* Subtle cross-hatch pattern for backgrounds */
+        .cross-hatch-bg {
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(139, 113, 106, 0.05) 10px, rgba(139, 113, 106, 0.05) 11px), 
+                              repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(139, 113, 106, 0.05) 10px, rgba(139, 113, 106, 0.05) 11px);
+        }
+
+        .pencil-line {
+            height: 1px;
+            background: #8b716a;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.5;
+            border-radius: 50%; /* soft edges */
+        }
+
+        .masking-tape {
+            background-color: #F0EFEA;
+            color: #58423c;
+            clip-path: polygon(2% 0, 98% 2%, 100% 98%, 1% 100%);
+            padding: 4px 12px;
+            display: inline-block;
+        }
+
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+        .lang-content-inline { display: none; }
+        .lang-content-inline.active { display: inline; }
+        .lang-content-inline-block { display: none; }
+        .lang-content-inline-block.active { display: inline-block; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased cross-hatch-bg min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky bg-surface z-50 transition-all duration-300" id="main-nav">
+<!-- Structural shell from JSON -->
+<div class="flex justify-between items-center px-gutter py-stack-sm max-w-7xl mx-auto w-full border-b-2 border-outline flat no shadows">
+<!-- Brand Logo -->
+<a class="font-headline-md text-headline-md text-primary flex items-center gap-2 hover:scale-105 hover:rotate-1 transition-transform duration-200" href="#"><img alt="Authana Logo" class="site-logo h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLuZtSbXAFyM-zUJ4V7u5c4tleOcC6ECBFDl_Iac_Koqut2YTJjPU48WMXLDu0bN4nmSmvh8DewUt1RIgGYuJDhuSFHyGcTn_HcRNvt9PEmlJF7LehJn07XzRO1-zCdXAO08GElRR_MXM28h1_fe6TIJN2jI362fasHN1zi6_0qQpvsbN5yOntUw8W5RJmuAazshykDMW9JSidUDKw9UjJWSkng7NDI4AqfLHOMnGg8jhwCsxSbDoQmYGKYy"/></a>
+<!-- Navigation Links (Web) -->
+<nav class="hidden md:flex gap-stack-md items-center font-body-md text-body-md">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:scale-105 hover:rotate-1 transition-transform duration-200" href="#">
+<span class="lang-content-inline active" data-lang="en">Our Story</span>
+<span class="lang-content-inline" data-lang="kn">ನಮ್ಮ ಕಥೆ</span>
+<span class="lang-content-inline" data-lang="hi">हमारी कहानी</span>
+<span class="lang-content-inline" data-lang="mr">आमची गोष्ट</span>
+</a>
+<a class="text-secondary hover:scale-105 hover:rotate-1 transition-transform duration-200" href="menu.html">
+<span class="lang-content-inline active" data-lang="en">The Menu</span>
+<span class="lang-content-inline" data-lang="kn">ಮೆನು</span>
+<span class="lang-content-inline" data-lang="hi">मेन्यू</span>
+<span class="lang-content-inline" data-lang="mr">मेनू</span>
+</a>
+<a class="text-secondary hover:scale-105 hover:rotate-1 transition-transform duration-200" href="community.html">
+<span class="lang-content-inline active" data-lang="en">Community</span>
+<span class="lang-content-inline" data-lang="kn">ಸಮುದಾಯ</span>
+<span class="lang-content-inline" data-lang="hi">समुदाय</span>
+<span class="lang-content-inline" data-lang="mr">समुदाय</span>
+</a>
+</nav>
+<!-- Trailing Primary Action and Language Switcher -->
+<div class="flex items-center gap-4">
+<button class="hidden md:block sketch-border sketch-shadow sketch-button bg-primary text-on-primary font-label-caps text-label-caps px-6 py-3 uppercase tracking-wider">
+<span class="lang-content-inline active" data-lang="en">Try Food</span>
+<span class="lang-content-inline" data-lang="kn">ಆಹಾರ ಪ್ರಯತ್ನಿಸಿ</span>
+<span class="lang-content-inline" data-lang="hi">खाना आज़माएं</span>
+<span class="lang-content-inline" data-lang="mr">अन्न वापरून पहा</span>
+</button>
+<select class="language-switcher bg-transparent sketch-border px-3 py-1 font-label-caps text-label-caps text-on-surface cursor-pointer focus:outline-none">
+<option value="en">English</option>
+<option value="kn">Kannada</option>
+<option value="hi">Hindi</option>
+<option value="mr">Marathi</option>
+</select>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-gutter py-stack-lg md:py-[100px] flex flex-col lg:flex-row items-center gap-stack-lg relative overflow-hidden min-h-[calc(100vh-80px)] lg:min-h-0 lg:h-[calc(100vh-80px)] lg:max-h-[720px]">
+<!-- Asymmetric text block -->
+<div class="w-full lg:w-1/2 flex flex-col items-start z-10 relative">
+<!-- Tape accent -->
+<div class="masking-tape font-label-caps text-label-caps mb-stack-sm transform -rotate-2">
+<span class="lang-content-inline active" data-lang="en">Freshly Scribbled Today</span>
+<span class="lang-content-inline" data-lang="kn">ಇಂದು ಹೊಸದಾಗಿ ಬರೆಯಲಾಗಿದೆ</span>
+<span class="lang-content-inline" data-lang="hi">आज ताज़ा लिखा गया</span>
+<span class="lang-content-inline" data-lang="mr">आज नव्याने लिहिले</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-stack-sm relative">
+<span class="lang-content-inline active" data-lang="en">Good Food, <br/></span>
+<span class="lang-content-inline" data-lang="kn">ಉತ್ತಮ ಆಹಾರ, <br/></span>
+<span class="lang-content-inline" data-lang="hi">अच्छा खाना, <br/></span>
+<span class="lang-content-inline" data-lang="mr">चांगले अन्न, <br/></span>
+<span class="relative inline-block">
+<span class="lang-content-inline active" data-lang="en">No Fuss.</span>
+<span class="lang-content-inline" data-lang="kn">ಯಾವುದೇ ಗಡಿಬಿಡಿಯಿಲ್ಲ.</span>
+<span class="lang-content-inline" data-lang="hi">कोई झंझट नहीं।</span>
+<span class="lang-content-inline" data-lang="mr">कोणताही गोंधळ नाही.</span>
+<!-- Sketchy underline graphic (CSS) -->
+<span class="absolute bottom-2 left-0 w-full h-[4px] bg-primary rounded-full transform -rotate-1 opacity-80" style="filter: url(#rough-edge);"></span>
+</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-md max-w-md leading-relaxed">
+<span class="lang-content-inline active" data-lang="en">index-style meals delivered with a sketch of love. No artificial gloss, just honest, messy goodness straight from our kitchen to yours.</span>
+<span class="lang-content-inline" data-lang="kn">ಪ್ರೀತಿಯ ರೇಖಾಚಿತ್ರದೊಂದಿಗೆ ಮನೆ-ಶೈಲಿಯ ಊಟವನ್ನು ತಲುಪಿಸಲಾಗುತ್ತದೆ. ಯಾವುದೇ ಕೃತಕ ಹೊಳಪು ಇಲ್ಲ, ನಮ್ಮ ಅಡುಗೆಮನೆಯಿಂದ ನಿಮ್ಮ ಅಡುಗೆಮನೆಗೆ ಪ್ರಾಮಾಣಿಕ, ಗೊಂದಲಮಯ ಒಳ್ಳೆಯತನ.</span>
+<span class="lang-content-inline" data-lang="hi">प्यार के स्केच के साथ घर-शैली का भोजन वितरित किया गया। कोई कृत्रिम चमक नहीं, बस हमारी रसोई से आपकी रसोई तक ईमानदार, गन्दी अच्छाई।</span>
+<span class="lang-content-inline" data-lang="mr">प्रेमाच्या रेखाटनासह घरच्या शैलीतील जेवण दिले जाते. कोणतीही कृत्रिम चमक नाही, फक्त आमच्या स्वयंपाकघरातून तुमच्यापर्यंत प्रामाणिक, गोंधळलेला चांगुलपणा.</span>
+</p>
+<div class="flex items-center gap-gutter">
+<button class="sketch-border sketch-shadow sketch-button bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 uppercase tracking-wider text-lg">
+<span class="lang-content-inline active" data-lang="en">Try Food</span>
+<span class="lang-content-inline" data-lang="kn">ಆಹಾರ ಪ್ರಯತ್ನಿಸಿ</span>
+<span class="lang-content-inline" data-lang="hi">खाना आज़माएं</span>
+<span class="lang-content-inline" data-lang="mr">अन्न वापरून पहा</span>
+</button>
+<!-- Hand-drawn arrow indication -->
+<div class="hidden sm:flex items-center text-outline transform rotate-12 opacity-70">
+<span class="material-symbols-outlined text-3xl">arrow_right_alt</span>
+<span class="font-label-caps text-label-caps ml-2">
+<span class="lang-content-inline active" data-lang="en">Grab yours</span>
+<span class="lang-content-inline" data-lang="kn">ನಿಮ್ಮದನ್ನು ಪಡೆದುಕೊಳ್ಳಿ</span>
+<span class="lang-content-inline" data-lang="hi">अपना ले लो</span>
+<span class="lang-content-inline" data-lang="mr">तुमचे पकडा</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Illustration Canvas -->
+<div class="w-full lg:w-1/2 relative h-[400px] lg:h-[480px] flex justify-center items-center">
+<!-- Abstract 'Tiffin' Illustration placeholder using a colored div to represent the sketch -->
+<div class="relative w-full max-w-md aspect-square sketch-border bg-surface-container-low p-stack-md flex flex-col justify-between transform rotate-2">
+<!-- Tiffin Tiers (Abstract representation) -->
+<div class="w-full h-1/3 sketch-border bg-surface relative flex items-center justify-center">
+<span class="material-symbols-outlined text-outline text-5xl opacity-50">ramen_dining</span>
+</div>
+<div class="w-full h-1/3 sketch-border bg-surface relative flex items-center justify-center transform -translate-x-2">
+<span class="material-symbols-outlined text-outline text-5xl opacity-50">tapas</span>
+</div>
+<div class="w-full h-1/3 sketch-border bg-surface relative flex items-center justify-center transform translate-x-1">
+<span class="material-symbols-outlined text-outline text-5xl opacity-50">rice_bowl</span>
+</div>
+<!-- Decorative steam lines -->
+<div class="absolute -top-12 left-1/2 transform -translate-x-1/2 flex gap-4 text-outline opacity-40">
+<span class="material-symbols-outlined" style="font-size: 40px;">water_drop</span>
+<span class="material-symbols-outlined" style="font-size: 60px; transform: translateY(-10px);">water_drop</span>
+<span class="material-symbols-outlined" style="font-size: 40px;">water_drop</span>
+</div>
+</div>
+<!-- Floating abstract elements -->
+<div class="absolute top-10 right-10 text-primary transform rotate-45 opacity-50">
+<span class="material-symbols-outlined text-4xl">local_florist</span>
+</div>
+<div class="absolute bottom-10 left-10 text-tertiary transform -rotate-12 opacity-50">
+<span class="material-symbols-outlined text-4xl">eco</span>
+</div>
+</div>
+</section>
+<!-- Blackboard Menu Section -->
+<section class="max-w-5xl mx-auto px-gutter py-stack-lg relative pb-stack-lg">
+<div class="text-center mb-stack-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface inline-block relative">
+<span class="lang-content-inline active" data-lang="en">Today's Canvas</span>
+<span class="lang-content-inline" data-lang="kn">ಇಂದಿನ ಕ್ಯಾನ್ವಾಸ್</span>
+<span class="lang-content-inline" data-lang="hi">आज का कैनवास</span>
+<span class="lang-content-inline" data-lang="mr">आजचा कॅनव्हास</span>
+<span class="absolute -bottom-2 left-1/4 w-1/2 h-[2px] bg-outline transform -rotate-2"></span>
+</h2>
+</div>
+<!-- Bento-style sketch grid for menu -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Menu Item 1 -->
+<div class="sketch-border p-stack-md bg-surface flex flex-col gap-unit relative group hover:-translate-y-1 transition-transform duration-300">
+<div class="absolute top-2 right-2 text-outline opacity-30 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span class="lang-content-inline active" data-lang="en">Mom's Dal</span>
+<span class="lang-content-inline" data-lang="kn">ಅಮ್ಮನ ದಾಲ್</span>
+<span class="lang-content-inline" data-lang="hi">माँ की दाल</span>
+<span class="lang-content-inline" data-lang="mr">आईची डाळ</span>
+</h3>
+<p class="font-body-md text-on-surface-variant flex-grow">
+<span class="lang-content-inline active" data-lang="en">Slow-cooked yellow lentils with a generous cumin temper.</span>
+<span class="lang-content-inline" data-lang="kn">ಉದಾರವಾದ ಜೀರಿಗೆ ಒಗ್ಗರಣೆಯೊಂದಿಗೆ ನಿಧಾನವಾಗಿ ಬೇಯಿಸಿದ ಹಳದಿ ಮಸೂರ.</span>
+<span class="lang-content-inline" data-lang="hi">प्रचुर मात्रा में जीरा तड़के के साथ धीमी आंच पर पकाई गई पीली दाल।</span>
+<span class="lang-content-inline" data-lang="mr">उदार जिरे टेंपरसह संथ-शिजवलेली पिवळी मसूर.</span>
+</p>
+<div class="pencil-line my-2 w-full"></div>
+<div class="flex justify-between items-center mt-auto">
+<span class="font-label-caps text-label-caps text-secondary">
+<span class="lang-content-inline active" data-lang="en">A staple</span>
+<span class="lang-content-inline" data-lang="kn">ಒಂದು ಪ್ರಧಾನ</span>
+<span class="lang-content-inline" data-lang="hi">एक मुख्य</span>
+<span class="lang-content-inline" data-lang="mr">एक मुख्य</span>
+</span>
+<span class="font-headline-sm text-headline-sm text-primary">₹120</span>
+</div>
+</div>
+<!-- Menu Item 2 -->
+<div class="sketch-border p-stack-md bg-surface-container-low flex flex-col gap-unit relative transform md:translate-y-4 group hover:-translate-y-1 transition-transform duration-300">
+<div class="absolute top-2 right-2 text-outline opacity-30 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">local_dining</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span class="lang-content-inline active" data-lang="en">Hand-rolled Rotis</span>
+<span class="lang-content-inline" data-lang="kn">ಕೈಯಿಂದ ಉರುಳಿಸಿದ ರೊಟ್ಟಿಗಳು</span>
+<span class="lang-content-inline" data-lang="hi">हाथ से बेली हुई रोटियां</span>
+<span class="lang-content-inline" data-lang="mr">हाताने लाटलेल्या रोट्या</span>
+</h3>
+<p class="font-body-md text-on-surface-variant flex-grow">
+<span class="lang-content-inline active" data-lang="en">Whole wheat flatbreads, puffed to perfection over open flame.</span>
+<span class="lang-content-inline" data-lang="kn">ಸಂಪೂರ್ಣ ಗೋಧಿ ಫ್ಲಾಟ್ಬ್ರೆಡ್ಗಳು, ತೆರೆದ ಜ್ವಾಲೆಯ ಮೇಲೆ ಪರಿಪೂರ್ಣತೆಗೆ ಉಬ್ಬುತ್ತವೆ.</span>
+<span class="lang-content-inline" data-lang="hi">साबुत गेहूं की फ्लैटब्रेड, खुली आंच पर पूरी तरह से फूली हुई।</span>
+<span class="lang-content-inline" data-lang="mr">संपूर्ण गव्हाचे फ्लॅटब्रेड, उघड्या ज्वालावर परिपूर्णतेसाठी फुगलेले.</span>
+</p>
+<div class="pencil-line my-2 w-full"></div>
+<div class="flex justify-between items-center mt-auto">
+<span class="font-label-caps text-label-caps text-secondary">
+<span class="lang-content-inline active" data-lang="en">Set of 4</span>
+<span class="lang-content-inline" data-lang="kn">4 ರ ಸೆಟ್</span>
+<span class="lang-content-inline" data-lang="hi">4 का सेट</span>
+<span class="lang-content-inline" data-lang="mr">४ चा संच</span>
+</span>
+<span class="font-headline-sm text-headline-sm text-primary">₹40</span>
+</div>
+</div>
+<!-- Menu Item 3 -->
+<div class="sketch-border p-stack-md bg-surface flex flex-col gap-unit relative md:col-span-2 lg:col-span-1 group hover:-translate-y-1 transition-transform duration-300">
+<div class="absolute top-2 right-2 text-outline opacity-30 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">set_meal</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span class="lang-content-inline active" data-lang="en">Messy Special Sabzi</span>
+<span class="lang-content-inline" data-lang="kn">ಮೆಸ್ಸಿ ವಿಶೇಷ ಸಬ್ಜಿ</span>
+<span class="lang-content-inline" data-lang="hi">गन्दी विशेष सब्जी</span>
+<span class="lang-content-inline" data-lang="mr">गोंधळलेला विशेष भाजी</span>
+</h3>
+<p class="font-body-md text-on-surface-variant flex-grow">
+<span class="lang-content-inline active" data-lang="en">Seasonal vegetables tossed in a rustic, hand-ground spice mix.</span>
+<span class="lang-content-inline" data-lang="kn">ಹಳ್ಳಿಗಾಡಿನ, ಕೈಯಿಂದ ರುಬ್ಬಿದ ಮಸಾಲೆ ಮಿಶ್ರಣದಲ್ಲಿ ಕಾಲೋಚಿತ ತರಕಾರಿಗಳನ್ನು ಎಸೆಯಲಾಗುತ್ತದೆ.</span>
+<span class="lang-content-inline" data-lang="hi">मौसमी सब्जियों को देहाती, हाथ से पिसे मसाला मिश्रण में मिलाया जाता है।</span>
+<span class="lang-content-inline" data-lang="mr">हंगामी भाज्या एका अडाणी, हाताने बारीक केलेल्या मसाल्याच्या मिश्रणात फेकल्या जातात.</span>
+</p>
+<div class="pencil-line my-2 w-full"></div>
+<div class="flex justify-between items-center mt-auto">
+<span class="font-label-caps text-label-caps text-secondary">
+<span class="lang-content-inline active" data-lang="en">Chef's mood</span>
+<span class="lang-content-inline" data-lang="kn">ಬಾಣಸಿಗನ ಮನಸ್ಥಿತಿ</span>
+<span class="lang-content-inline" data-lang="hi">शेफ का मूड</span>
+<span class="lang-content-inline" data-lang="mr">शेफचा मूड</span>
+</span>
+<span class="font-headline-sm text-headline-sm text-primary">₹150</span>
+</div>
+</div>
+</div>
+<div class="mt-stack-lg text-center">
+<a class="inline-flex items-center gap-2 font-headline-sm text-headline-sm text-primary hover:text-primary-container border-b-2 border-transparent hover:border-primary-container transition-all pb-1" href="menu.html">
+<span class="lang-content-inline active" data-lang="en">See Full Menu</span>
+<span class="lang-content-inline" data-lang="kn">ಪೂರ್ಣ ಮೆನು ನೋಡಿ</span>
+<span class="lang-content-inline" data-lang="hi">पूरा मेनू देखें</span>
+<span class="lang-content-inline" data-lang="mr">संपूर्ण मेनू पहा</span>
+<span class="material-symbols-outlined text-sm">east</span>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-stack-md bg-surface-container-highest border-t-2 border-outline flat no shadows mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop gap-stack-sm max-w-7xl mx-auto w-full">
+<!-- Brand Logo -->
+<div class="font-headline-sm text-headline-sm text-on-surface"><img alt="Authana Logo" class="site-logo h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLuZtSbXAFyM-zUJ4V7u5c4tleOcC6ECBFDl_Iac_Koqut2YTJjPU48WMXLDu0bN4nmSmvh8DewUt1RIgGYuJDhuSFHyGcTn_HcRNvt9PEmlJF7LehJn07XzRO1-zCdXAO08GElRR_MXM28h1_fe6TIJN2jI362fasHN1zi6_0qQpvsbN5yOntUw8W5RJmuAazshykDMW9JSidUDKw9UjJWSkng7NDI4AqfLHOMnGg8jhwCsxSbDoQmYGKYy"/></div>
+<!-- Copyright -->
+<div class="font-label-caps text-label-caps text-on-secondary-fixed-variant opacity-70 text-center md:text-right">
+                © 2024 MessyKitchen - Handcrafted with care.
+            </div>
+</div>
+</footer>
+<!-- SVG Filters for rough edges -->
+<svg aria-hidden="true" focusable="false" style="width:0;height:0;position:absolute;">
+<defs>
+<filter id="rough-edge">
+<feturbulence basefrequency="0.05" numoctaves="3" result="noise" type="fractalNoise"></feturbulence>
+<fedisplacementmap in="SourceGraphic" in2="noise" scale="3" xchannelselector="R" ychannelselector="G"></fedisplacementmap>
+</filter>
+</defs>
+</svg>
+<!-- Simple interaction script -->
+<script>
+        // Shrink nav on scroll
+        const nav = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-sm', 'py-unit');
+                nav.classList.remove('py-stack-sm');
+            } else {
+                nav.classList.remove('shadow-sm', 'py-unit');
+                nav.classList.add('py-stack-sm');
+            }
+        });
+
+        // Language Switcher Logic
+        const logos = {
+            en: 'https://lh3.googleusercontent.com/aida/AP1WRLuZtSbXAFyM-zUJ4V7u5c4tleOcC6ECBFDl_Iac_Koqut2YTJjPU48WMXLDu0bN4nmSmvh8DewUt1RIgGYuJDhuSFHyGcTn_HcRNvt9PEmlJF7LehJn07XzRO1-zCdXAO08GElRR_MXM28h1_fe6TIJN2jI362fasHN1zi6_0qQpvsbN5yOntUw8W5RJmuAazshykDMW9JSidUDKw9UjJWSkng7NDI4AqfLHOMnGg8jhwCsxSbDoQmYGKYy',
+            kn: 'https://lh3.googleusercontent.com/aida/AP1WRLvF47jQw-9t8Qx0kk93y8MT87UvGO4iyqkByP4r4zlvBeYUZcxmoTO5W5cNsgTqzOgt0ecMl4ZakM3rF9RAZRpNey_XGajMHvKZTMuJ-y2OwZdddF3sZrLVboXkkdA295CkYJH416_zxDfb8ProhK_q_aS3O7rZD4-wfm_ZmwKGz6Im-HzE9bwJWEwrDpD4UfptdIRwe3XyjTkF2okEApCk7LACaMAzaf8MZyIeuooTF7UlpYXZCxLxuFff',
+            hi: 'https://lh3.googleusercontent.com/aida/AP1WRLtY3YlvLkNN4G-SnNTgXf6oIzG_vGmFinPuNYn65oULR8Bi-jWYeaW1KSFWV4aGtWMlZ_9uqzeawIWsAnPd_eg_PXIsWH-dYhMh2cJvHEecKbOuVE-o8V_yPyoCN3XQYgul8pYbMqzRqtpc0ucGkevf_wvJ_IRraWDXyf15jmZQgsQ-7krP48kYLi1rbNHq05bcWSDnqTdXHpBJ1aeOCN_LcYK_GONFAdkaGQBuCoGsFxf0M0VHNrbRc1YH',
+            mr: 'https://lh3.googleusercontent.com/aida/AP1WRLuVZkUU_b7047yiOxJ3T0NlNaQ8de3En2IshY_HzHNq40GYAbnUgqlt8_Y-GbORGuFO6W-IAuyM9_1Sd6iWM8Op-pI5KlXvg2oQ8JLIVzuX0VHBwiubH7hVuwuFOdJSc5R7KrDUmnOaSmp2g8JAtrFurAzhku4QcW5kluy90pygUHu73jnBqZ9vuTb_vfvSgIph83U5cYwNMFSdeNzcP6MR_MWhLJZEjOVzS1mq2jdAmCbYE3-ryPKPy6_o'
+        };
+        
+        const switchers = document.querySelectorAll('.language-switcher');
+        const siteLogos = document.querySelectorAll('.site-logo');
+        const langContents = document.querySelectorAll('.lang-content, .lang-content-inline, .lang-content-inline-block');
+
+        function setLanguage(lang) {
+            // Update all switchers
+            switchers.forEach(s => s.value = lang);
+            
+            // Update logos
+            siteLogos.forEach(logo => logo.src = logos[lang]);
+
+            // Update content visibility
+            langContents.forEach(el => {
+                if (el.dataset.lang === lang) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active');
+                }
+            });
+
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        switchers.forEach(switcher => {
+            switcher.addEventListener('change', (e) => {
+                setLanguage(e.target.value);
+            });
+        });
+
+        // Init language from local storage or default to 'en'
+        const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+        setLanguage(savedLang);
+
+    </script>
+</body></html>
