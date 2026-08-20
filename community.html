@@ -418,8 +418,8 @@ Belagavi, Karnataka
 <button onclick="openOrderModal()" class="sketch-border sketch-shadow bg-primary text-on-primary font-label-caps px-4 py-2.5 uppercase tracking-wider text-xs flex items-center justify-center gap-2 cursor-pointer">
 <span class="material-symbols-outlined" style="font-size:16px;">chat</span> Order on WhatsApp
 </button>
-<a href="tel:+91 8310786409" class="sketch-border bg-surface text-on-surface font-label-caps px-4 py-2.5 uppercase tracking-wider text-xs flex items-center justify-center gap-2 hover:bg-surface-container transition-colors">
-<span class="material-symbols-outlined" style="font-size:16px;">call</span> Call: +91 8310786409
+<a href="tel:+91 8310*******" class="sketch-border bg-surface text-on-surface font-label-caps px-4 py-2.5 uppercase tracking-wider text-xs flex items-center justify-center gap-2 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" style="font-size:16px;">call</span> Call: +91 8310*******
 </a>
 <span class="text-xs text-on-surface-variant font-label-caps">Email: hello@authana.in</span>
 </div>
@@ -457,14 +457,14 @@ External Redirect
 </div>
 <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Order on WhatsApp</h3>
 <p class="font-body-md text-sm text-on-surface-variant mb-6 leading-relaxed">
-You are leaving the website to open WhatsApp and place your order directly with our Belagavi kitchen team (<strong class="text-on-surface">+91 8310786409</strong>).
+You are leaving the website to open WhatsApp and place your order directly with our Belagavi kitchen team (<strong class="text-on-surface">+91 8310*******</strong>).
 </p>
 
 <div class="flex flex-col sm:flex-row gap-3 justify-center">
 <button onclick="closeWhatsAppModal()" class="sketch-border bg-surface hover:bg-surface-container text-on-surface font-label-caps py-2.5 px-5 text-xs uppercase tracking-wider cursor-pointer">
 Cancel
 </button>
-<a id="whatsapp-redirect-btn" href="https://wa.me/918310786409?text=Hi%20Authana%20Belagavi!%20I%20would%20like%20to%20order%20food." target="_blank" rel="noopener" onclick="closeWhatsAppModal()" class="sketch-border sketch-shadow sketch-button bg-primary text-on-primary font-label-caps py-2.5 px-6 text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer">
+<a id="whatsapp-redirect-btn" href="https://wa.me/9183107******?text=Hi%20Authana%20Belagavi!%20I%20would%20like%20to%20order%20food." target="_blank" rel="noopener" onclick="closeWhatsAppModal()" class="sketch-border sketch-shadow sketch-button bg-primary text-on-primary font-label-caps py-2.5 px-6 text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer">
 <span class="material-symbols-outlined" style="font-size:16px;">open_in_new</span> Proceed to WhatsApp
 </a>
 </div>
@@ -735,9 +735,9 @@ Cancel
         // WHATSAPP REDIRECT WARNING MODAL LOGIC
         function openOrderModal(itemName) {
             const redirectBtn = document.getElementById('whatsapp-redirect-btn');
-            let targetWhatsAppUrl = 'https://wa.me/918310786409?text=Hi%20Authana%20Belagavi!%20I%20would%20like%20to%20order%20food.';
+            let targetWhatsAppUrl = 'https://wa.me/9183107******?text=Hi%20Authana%20Belagavi!%20I%20would%20like%20to%20order%20food.';
             if(itemName) {
-                targetWhatsAppUrl = `https://wa.me/918310786409?text=Hi%20Authana%20Belagavi!%20I%20would%20like%20to%20order%20${encodeURIComponent(itemName)}%20(%E2%82%B969).`;
+                targetWhatsAppUrl = `https://wa.me/9183107******?text=Hi%20Authana%20Belagavi!%20I%20would%20like%20to%20order%20${encodeURIComponent(itemName)}%20(%E2%82%B969).`;
             }
             if(redirectBtn) {
                 redirectBtn.href = targetWhatsAppUrl;
