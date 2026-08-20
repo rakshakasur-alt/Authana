@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-
-<html class="light" lang="en" style=""><head>
+<html class="light" lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>The Menu - MessyKitchen</title>
+<title>Daily Menu &amp; Thalis @ ₹69 — Authana Belagavi</title>
+<meta name="description" content="Explore Authana's weekly home-style menu in Belagavi. Freshly cooked thalis, dal chawal, paneer bhurji, and rotis — all strictly ₹69 each." />
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
@@ -77,70 +78,20 @@
                       "stack-sm": "12px"
               },
               "fontFamily": {
-                      "label-caps": [
-                              "JetBrains Mono"
-                      ],
-                      "body-lg": [
-                              "Work Sans"
-                      ],
-                      "display-lg": [
-                              "Bricolage Grotesque"
-                      ],
-                      "headline-sm": [
-                              "Bricolage Grotesque"
-                      ],
-                      "body-md": [
-                              "Work Sans"
-                      ],
-                      "headline-md": [
-                              "Bricolage Grotesque"
-                      ]
+                      "label-caps": [ "JetBrains Mono" ],
+                      "body-lg": [ "Work Sans" ],
+                      "display-lg": [ "Bricolage Grotesque" ],
+                      "headline-sm": [ "Bricolage Grotesque" ],
+                      "body-md": [ "Work Sans" ],
+                      "headline-md": [ "Bricolage Grotesque" ]
               },
               "fontSize": {
-                      "label-caps": [
-                              "12px",
-                              {
-                                      "lineHeight": "1.0",
-                                      "letterSpacing": "0.1em",
-                                      "fontWeight": "500"
-                              }
-                      ],
-                      "body-lg": [
-                              "18px",
-                              {
-                                      "lineHeight": "1.6",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "display-lg": [
-                              "48px",
-                              {
-                                      "lineHeight": "1.1",
-                                      "letterSpacing": "-0.02em",
-                                      "fontWeight": "800"
-                              }
-                      ],
-                      "headline-sm": [
-                              "24px",
-                              {
-                                      "lineHeight": "1.2",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "body-md": [
-                              "16px",
-                              {
-                                      "lineHeight": "1.6",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "headline-md": [
-                              "32px",
-                              {
-                                      "lineHeight": "1.2",
-                                      "fontWeight": "700"
-                              }
-                      ]
+                      "label-caps": [ "12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500" } ],
+                      "body-lg": [ "18px", { "lineHeight": "1.6", "fontWeight": "400" } ],
+                      "display-lg": [ "48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" } ],
+                      "headline-sm": [ "24px", { "lineHeight": "1.2", "fontWeight": "600" } ],
+                      "body-md": [ "16px", { "lineHeight": "1.6", "fontWeight": "400" } ],
+                      "headline-md": [ "32px", { "lineHeight": "1.2", "fontWeight": "700" } ]
               }
       },
           },
@@ -171,15 +122,16 @@
         }
 
         .note-card {
-            transition: all 0.2s ease-in-out;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
             cursor: pointer;
             background-color: theme('colors.surface');
         }
 
-        .note-card:hover {
-            transform: scale(1.02) rotate(random(-2deg, 2deg)) translateY(-4px);
-            box-shadow: 6px 6px 0px theme('colors.surface-variant');
-        }
+        .note-card:nth-child(odd):hover  { transform: scale(1.02) rotate(-1.5deg) translateY(-4px); box-shadow: 6px 6px 0px theme('colors.on-surface'); }
+        .note-card:nth-child(even):hover { transform: scale(1.02) rotate(1.5deg)  translateY(-4px); box-shadow: 6px 6px 0px theme('colors.on-surface'); }
+
+        .note-card { overflow: hidden; }
+        .sketch-border { overflow: hidden; }
 
         .scribble-bg {
             background-image: repeating-linear-gradient(
@@ -193,14 +145,13 @@
         }
         
         .hide-scroll {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
         .hide-scroll::-webkit-scrollbar {
             display: none;
         }
 
-        /* Modal animations */
         @keyframes modalEnter {
             from { opacity: 0; transform: scale(0.95) translateY(20px); }
             to { opacity: 1; transform: scale(1) translateY(0); }
@@ -213,27 +164,58 @@
         body:not([data-lang="KN"]) .lang-kn { display: none !important; }
         body:not([data-lang="HI"]) .lang-hi { display: none !important; }
         body:not([data-lang="MR"]) .lang-mr { display: none !important; }
+
+        .note-card.today-card {
+            outline: 3px solid theme('colors.primary');
+            outline-offset: 2px;
+        }
+        .note-card.today-card::before {
+            content: 'TODAY';
+            position: absolute;
+            top: -1px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-1deg);
+            background: theme('colors.primary');
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            padding: 2px 10px;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .note-card h2.font-headline-sm { font-size: 28px !important; }
+        .note-card h3.font-body-lg { font-size: 22px !important; line-height: 1.4 !important; }
+        .note-card .font-headline-md { font-size: 36px !important; }
+        .note-card .font-label-caps { font-size: 14px !important; letter-spacing: 0.08em !important; }
+        .note-card .font-display-lg { font-size: clamp(36px, 4vw, 56px) !important; }
+        #itemModal h2 { font-size: clamp(32px, 4vw, 52px) !important; }
+        #itemModal .font-headline-md { font-size: 28px !important; }
+        #itemModal .font-body-md { font-size: 18px !important; line-height: 1.6 !important; }
+        #itemModal .font-label-caps { font-size: 13px !important; }
     </style>
 </head>
 <body class="font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen" data-lang="EN">
 <!-- TopNavBar -->
 <header class="w-full top-0 sticky bg-surface border-b-2 border-outline z-40 transition-transform duration-200">
-<div class="flex justify-between items-center px-gutter py-stack-sm max-w-7xl mx-auto w-full">
-<a class="font-headline-md text-headline-md text-primary hover:scale-105 hover:rotate-1 transition-transform duration-200" href="index.html"><img alt="Authana Logo" class="h-12 w-auto object-contain" id="headerLogo" src="https://lh3.googleusercontent.com/aida/AP1WRLuZtSbXAFyM-zUJ4V7u5c4tleOcC6ECBFDl_Iac_Koqut2YTJjPU48WMXLDu0bN4nmSmvh8DewUt1RIgGYuJDhuSFHyGcTn_HcRNvt9PEmlJF7LehJn07XzRO1-zCdXAO08GElRR_MXM28h1_fe6TIJN2jI362fasHN1zi6_0qQpvsbN5yOntUw8W5RJmuAazshykDMW9JSidUDKw9UjJWSkng7NDI4AqfLHOMnGg8jhwCsxSbDoQmYGKYy"/></a>
+<div class="flex justify-between items-center px-5 md:px-8 lg:px-16 py-stack-sm w-full">
+<a class="font-headline-md text-headline-md text-primary hover:scale-105 hover:rotate-1 transition-transform duration-200" href="index.html">
+<img alt="Authana Logo" class="h-12 w-auto object-contain" id="headerLogo" src="https://lh3.googleusercontent.com/aida/AP1WRLuZtSbXAFyM-zUJ4V7u5c4tleOcC6ECBFDl_Iac_Koqut2YTJjPU48WMXLDu0bN4nmSmvh8DewUt1RIgGYuJDhuSFHyGcTn_HcRNvt9PEmlJF7LehJn07XzRO1-zCdXAO08GElRR_MXM28h1_fe6TIJN2jI362fasHN1zi6_0qQpvsbN5yOntUw8W5RJmuAazshykDMW9JSidUDKw9UjJWSkng7NDI4AqfLHOMnGg8jhwCsxSbDoQmYGKYy"/>
+</a>
 <nav class="hidden md:flex items-center gap-gutter">
-<a class="text-secondary font-body-md text-body-md hover:scale-105 hover:rotate-1 transition-transform duration-200" href="index.html">
+<a class="text-secondary hover:scale-105 hover:rotate-1 transition-transform duration-200" href="index.html#story" style="font-size:18px;font-family:'Work Sans',sans-serif;">
 <span class="lang-en">Our Story</span>
 <span class="lang-kn">ನಮ್ಮ ಕಥೆ</span>
 <span class="lang-hi">हमारी कहानी</span>
 <span class="lang-mr">आमची गोष्ट</span>
 </a>
-<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md hover:scale-105 hover:rotate-1 transition-transform duration-200 active:scale-95" href="menu.html">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:scale-105 hover:rotate-1 transition-transform duration-200 active:scale-95" href="menu.html" style="font-size:18px;font-family:'Work Sans',sans-serif;">
 <span class="lang-en">The Menu</span>
 <span class="lang-kn">ಮೆನು</span>
 <span class="lang-hi">मेनू</span>
 <span class="lang-mr">मेनू</span>
 </a>
-<a class="text-secondary font-body-md text-body-md hover:scale-105 hover:rotate-1 transition-transform duration-200" href="community.html">
+<a class="text-secondary hover:scale-105 hover:rotate-1 transition-transform duration-200" href="community.html" style="font-size:18px;font-family:'Work Sans',sans-serif;">
 <span class="lang-en">Community</span>
 <span class="lang-kn">ಸಮುದಾಯ</span>
 <span class="lang-hi">समुदाय</span>
@@ -247,34 +229,98 @@
 <option value="HI">HI</option>
 <option value="MR">MR</option>
 </select>
-<button class="font-body-md text-body-md text-on-primary bg-primary border-2 border-on-surface px-6 py-2 hover:scale-105 hover:rotate-1 transition-transform duration-200 active:scale-95 shadow-[2px_2px_0px_theme('colors.on-surface')]">
-<span class="lang-en">Try Food</span>
-<span class="lang-kn">ಆಹಾರ ಪ್ರಯತ್ನಿಸಿ</span>
-<span class="lang-hi">खाना चखें</span>
-<span class="lang-mr">अन्न चाखून पहा</span>
+<button onclick="openOrderModal()" class="text-on-primary bg-primary border-2 border-on-surface px-6 py-2 hover:scale-105 hover:rotate-1 transition-transform duration-200 active:scale-95 shadow-[2px_2px_0px_theme('colors.on-surface')] flex items-center gap-2 cursor-pointer" style="font-size:18px;font-family:'Work Sans',sans-serif;">
+<span class="material-symbols-outlined" style="font-size:18px;">shopping_bag</span>
+<span class="lang-en">Order Food</span>
+<span class="lang-kn">ಆಹಾರ ಆರ್ಡರ್ ಮಾಡಿ</span>
+<span class="lang-hi">खाना ऑर्डर करें</span>
+<span class="lang-mr">ಅನ್ನ ಆರ್ಡರ್ करा</span>
 </button>
 </div>
+<button class="md:hidden text-primary" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
+<span class="material-symbols-outlined" id="mobile-menu-icon">menu</span>
+</button>
 </div>
 </header>
+
+<!-- Mobile Drawer -->
+<div class="hidden fixed inset-0 z-50 md:hidden" id="mobile-drawer">
+<div class="absolute inset-0 bg-on-surface/30" id="mobile-overlay"></div>
+<nav class="absolute top-0 right-0 h-full w-72 bg-surface border-l-2 border-outline flex flex-col pt-20 px-6 gap-4 shadow-xl z-50">
+<a class="font-body-lg text-body-lg text-secondary" href="index.html#story" onclick="closeMobileMenu()">
+<span class="lang-en">Our Story</span>
+<span class="lang-kn">ನಮ್ಮ ಕಥೆ</span>
+<span class="lang-hi">हमारी कहानी</span>
+<span class="lang-mr">आमची गोष्ट</span>
+</a>
+<a class="font-body-lg text-body-lg text-primary font-bold border-b-2 border-primary pb-1 w-max" href="menu.html">
+<span class="lang-en">The Menu</span>
+<span class="lang-kn">ಮೆನು</span>
+<span class="lang-hi">मेनू</span>
+<span class="lang-mr">मेनू</span>
+</a>
+<a class="font-body-lg text-body-lg text-secondary" href="community.html">
+<span class="lang-en">Community</span>
+<span class="lang-kn">ಸಮುದಾಯ</span>
+<span class="lang-hi">समुदाय</span>
+<span class="lang-mr">समुदाय</span>
+</a>
+<div class="mt-4 pt-4 border-t border-outline flex flex-col gap-4">
+<button onclick="closeMobileMenu(); openOrderModal();" class="font-body-md text-body-md text-on-primary bg-primary border-2 border-on-surface px-6 py-3 w-full shadow-[2px_2px_0px_theme('colors.on-surface')] flex items-center justify-center gap-2 cursor-pointer">
+<span class="material-symbols-outlined" style="font-size:18px;">shopping_bag</span>
+<span class="lang-en">Order Food</span>
+<span class="lang-kn">ಆಹಾರ ಆರ್ಡರ್ ಮಾಡಿ</span>
+<span class="lang-hi">खाना ऑर्डर करें</span>
+<span class="lang-mr">ಅನ್ನ ಆರ್ಡರ್ करा</span>
+</button>
+<select class="bg-transparent border-2 border-outline text-on-surface font-body-md px-3 py-2 cursor-pointer focus:outline-none w-full" onchange="changeLanguage(this.value)" id="langSwitcherMobile">
+<option value="EN">EN</option>
+<option value="KN">KN</option>
+<option value="HI">HI</option>
+<option value="MR">MR</option>
+</select>
+</div>
+</nav>
+</div>
+
+<!-- Delivery hours & location banner -->
+<div class="w-full bg-surface-container border-b border-outline/40 px-5 md:px-8 lg:px-16 py-2 flex flex-wrap items-center justify-between gap-2">
+  <div class="flex items-center gap-2 text-secondary" style="font-size:13px; font-family:'JetBrains Mono',monospace;">
+    <span class="material-symbols-outlined" style="font-size:16px; color:#a33818;">schedule</span>
+    <span class="lang-en">Working: <strong class="text-on-surface">6 PM – 10 PM</strong> · Slots: <strong class="text-on-surface">8 PM</strong> (by 7:30) &amp; <strong class="text-on-surface">10 PM</strong> (by 9:30) · Express +₹20 (30 min)</span>
+    <span class="lang-kn">ಸಮಯ: <strong class="text-on-surface">ಸಂಜೆ 6 – 10</strong> · ಡೆಲಿವರಿ: <strong class="text-on-surface">8 PM</strong> &amp; <strong class="text-on-surface">10 PM</strong> · ಎಕ್ಸ್‌ಪ್ರೆಸ್ +₹20 (30 ನಿಮಿಷ)</span>
+    <span class="lang-hi">समय: <strong class="text-on-surface">शाम 6 – 10</strong> · डिलीवरी: <strong class="text-on-surface">8 PM</strong> &amp; <strong class="text-on-surface">10 PM</strong> · एक्सप्रेस +₹20 (30 मिनट)</span>
+    <span class="lang-mr">वेळ: <strong class="text-on-surface">संध्याकाळी 6 – 10</strong> · डिलिव्हरी: <strong class="text-on-surface">8 PM</strong> &amp; <strong class="text-on-surface">10 PM</strong> · एक्सप्रेस +₹20 (30 मिनिटे)</span>
+  </div>
+  <div class="flex items-center gap-2 text-secondary" style="font-size:13px; font-family:'JetBrains Mono',monospace;">
+    <span class="material-symbols-outlined" style="font-size:16px; color:#a33818;">location_on</span>
+    <span class="lang-en">Serving <strong class="text-on-surface">Belagavi</strong> (Tilakwadi, Shahapur, Angol, Vadgaon &amp; 10 more areas)</span>
+    <span class="lang-kn">ಸೇವೆ: <strong class="text-on-surface">ಬೆಳಗಾವಿ</strong> (ತಿಳಕವಾಡಿ, ಶಹಾಪುರ, ಅಂಗೋಲ, ವಡಗಾಂವ &amp; 10 ಪ್ರದೇಶಗಳು)</span>
+    <span class="lang-hi">सेवा: <strong class="text-on-surface">बेलगावी</strong> (तिलकवाड़ी, शाहपुर, अंगोल, वडगांव &amp; 10 क्षेत्र)</span>
+    <span class="lang-mr">सेवा: <strong class="text-on-surface">बेळगाव</strong> (टिळकवाडी, शहापूर, अनगोळ, वडगाव &amp; 10 भाग)</span>
+  </div>
+</div>
+
 <!-- Main Content Canvas -->
-<main class="flex-grow w-full max-w-7xl mx-auto px-gutter lg:px-margin-desktop py-stack-lg flex flex-col items-center">
+<main class="flex-grow w-full px-5 md:px-8 lg:px-16 py-stack-lg flex flex-col items-center">
 <div class="mb-stack-lg text-center max-w-3xl relative">
-<h1 class="font-display-lg text-display-lg text-on-surface mb-stack-sm relative z-10">
-<span class="lang-en">This Week's Mess</span>
-<span class="lang-kn">ಈ ವಾರದ ಮೆಸ್</span>
-<span class="lang-hi">इस हफ्ते का मेस</span>
-<span class="lang-mr">या आठवड्याचा मेस</span>
+<h1 class="font-display-lg text-on-surface mb-stack-sm relative z-10" style="font-size: clamp(44px, 5vw, 64px); line-height:1.1; font-weight:800;">
+<span class="lang-en">This Week's Belagavi Menu</span>
+<span class="lang-kn">ಈ ವಾರದ ಬೆಳಗಾವಿ ಮೆನು</span>
+<span class="lang-hi">इस हफ्ते का बेलगावी मेनू</span>
+<span class="lang-mr">या आठवड्याचा बेळगाव मेनू</span>
 </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant relative z-10">
-<span class="lang-en">Hand-picked, slightly imperfect, perfectly delicious daily specials. Always ₹69.</span>
-<span class="lang-kn">ಕೈಯಿಂದ ಆರಿಸಿದ, ಸ್ವಲ್ಪ ಅಪೂರ್ಣ, ಪರಿಪೂರ್ಣ ರುಚಿಕರವಾದ ದೈನಂದಿನ ವಿಶೇಷಗಳು. ಯಾವಾಗಲೂ ₹69.</span>
-<span class="lang-hi">हाथ से चुने गए, थोड़े अपूर्ण, पूरी तरह से स्वादिष्ट दैनिक विशेष। हमेशा ₹69.</span>
-<span class="lang-mr">हाताने निवडलेले, थोडे अपूर्ण, उत्तम स्वादिष्ट रोजचे विशेष. नेहमी ₹69.</span>
+<p class="font-body-lg text-on-surface-variant relative z-10" style="font-size:20px; line-height:1.6;">
+<span class="lang-en">Freshly cooked home-style meals. Every single dish is strictly ₹69!</span>
+<span class="lang-kn">ತಾಜಾ ಮನೆ ಶೈಲಿಯ ಊಟ. ಪ್ರತಿಯೊಂದು ಖಾದ್ಯವೂ ಕಟ್ಟುನಿಟ್ಟಾಗಿ ₹69!</span>
+<span class="lang-hi">ताजा घर का बना भोजन। प्रत्येक व्यंजन केवल ₹69 है!</span>
+<span class="lang-mr">ताजे शिजवलेले घरगुती जेवण. प्रत्येक पदार्थ फक्त ₹69!</span>
 </p>
 <div class="absolute -top-4 -left-8 w-16 h-16 scribble-bg rounded-full -z-0"></div>
 </div>
+
 <!-- Bento Grid for Menu Notes -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-stack-md w-full auto-rows-[220px] lg:auto-rows-[240px] xl:auto-rows-[260px]">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-stack-md w-full" style="grid-auto-rows: minmax(220px, auto);">
 <!-- Monday -->
 <article class="note-card sketch-border p-stack-sm flex flex-col justify-between transform -rotate-1 relative" onclick="openModal('Monday', 'Dal Chawal', 'The ultimate comfort bowl. Slow-cooked lentils with cumin temper, served over steamed basmati rice.', ['Yellow lentils', 'Basmati rice', 'Ghee', 'Cumin seeds', 'Garlic', 'Dried red chilies'], 'High in protein, gut-friendly.')">
 <div class="absolute top-2 right-2 w-6 h-6 border-b-2 border-r-2 border-outline opacity-50 transform rotate-45"></div>
@@ -295,7 +341,7 @@
 </div>
 <div class="flex justify-between items-end">
 <span class="font-label-caps text-label-caps text-secondary underline decoration-wavy decoration-outline">
-<span class="lang-en">View Details</span>
+<span class="lang-en">View Details &amp; Order</span>
 <span class="lang-kn">ವಿವರಗಳನ್ನು ನೋಡಿ</span>
 <span class="lang-hi">विवरण देखें</span>
 <span class="lang-mr">तपशील पहा</span>
@@ -303,8 +349,9 @@
 <span class="font-headline-md text-headline-md text-on-surface">₹69</span>
 </div>
 </article>
+
 <!-- Tuesday -->
-<article class="note-card sketch-border p-stack-sm flex flex-col justify-between transform rotate-2 lg:col-span-2 relative" onclick="openModal('Tuesday', 'Paneer Bhurji &amp; Roti', 'Scrambled cottage cheese tossed with onions, tomatoes, and everyday spices. Served with two hand-rolled rotis.', ['Fresh Paneer', 'Onions', 'Tomatoes', 'Green chilies', 'Turmeric', 'Whole wheat flour'], 'Rich in calcium, high energy.')">
+<article class="note-card sketch-border p-stack-sm flex flex-col justify-between transform rotate-2 lg:col-span-2 xl:col-span-2 relative" onclick="openModal('Tuesday', 'Paneer Bhurji &amp; Roti', 'Scrambled cottage cheese tossed with onions, tomatoes, and everyday spices. Served with two hand-rolled rotis.', ['Fresh Paneer', 'Onions', 'Tomatoes', 'Green chilies', 'Turmeric', 'Whole wheat flour'], 'Rich in calcium, high energy.')">
 <div class="absolute inset-0 scribble-bg -z-10"></div>
 <div>
 <h2 class="font-headline-sm text-headline-sm text-tertiary mb-2 border-b border-surface-variant pb-1 inline-block">
@@ -326,7 +373,7 @@
 </div>
 <div class="flex justify-between items-end">
 <span class="font-label-caps text-label-caps text-secondary underline decoration-wavy decoration-outline">
-<span class="lang-en">View Details</span>
+<span class="lang-en">View Details &amp; Order</span>
 <span class="lang-kn">ವಿವರಗಳನ್ನು ನೋಡಿ</span>
 <span class="lang-hi">विवरण देखें</span>
 <span class="lang-mr">तपशील पहा</span>
@@ -334,6 +381,7 @@
 <span class="font-headline-md text-headline-md text-on-surface">₹69</span>
 </div>
 </article>
+
 <!-- Wednesday -->
 <article class="note-card sketch-border p-stack-sm flex flex-col justify-between transform -rotate-2 relative" onclick="openModal('Wednesday', 'Khichdi', 'The humble healer. A gentle porridge of rice and lentils, lightly spiced and deeply soothing.', ['Rice', 'Moong dal', 'Turmeric', 'Ghee', 'Cumin'], 'Easy to digest, nourishing.')">
 <div>
@@ -341,7 +389,7 @@
 <span class="lang-en">Wednesday</span>
 <span class="lang-kn">ಬುಧವಾರ</span>
 <span class="lang-hi">बुधवार</span>
-<span class="lang-mr">बुधवार</span>
+<span class="lang-mr">ಬುಧವಾರ</span>
 </h2>
 <h3 class="font-body-lg text-body-lg text-on-surface font-semibold">
 <span class="lang-en">Khichdi</span>
@@ -353,7 +401,7 @@
 </div>
 <div class="flex justify-between items-end">
 <span class="font-label-caps text-label-caps text-secondary underline decoration-wavy decoration-outline">
-<span class="lang-en">View Details</span>
+<span class="lang-en">View Details &amp; Order</span>
 <span class="lang-kn">ವಿವರಗಳನ್ನು ನೋಡಿ</span>
 <span class="lang-hi">विवरण देखें</span>
 <span class="lang-mr">तपशील पहा</span>
@@ -361,6 +409,7 @@
 <span class="font-headline-md text-headline-md text-on-surface">₹69</span>
 </div>
 </article>
+
 <!-- Thursday -->
 <article class="note-card sketch-border p-stack-sm flex flex-col justify-between transform rotate-1 xl:row-span-2 relative bg-surface-container-low" onclick="openModal('Thursday', 'Rajma Chawal', 'Kidney beans stewed overnight in a thick tomato gravy. A North Indian hug in a bowl.', ['Kidney beans', 'Tomatoes', 'Onions', 'Garam masala', 'Basmati rice'], 'High fiber, complex carbs.')">
 <div>
@@ -391,7 +440,7 @@
 </span>
 <div class="flex justify-between items-end">
 <span class="font-label-caps text-label-caps text-secondary underline decoration-wavy decoration-outline">
-<span class="lang-en">View Details</span>
+<span class="lang-en">View Details &amp; Order</span>
 <span class="lang-kn">ವಿವರಗಳನ್ನು ನೋಡಿ</span>
 <span class="lang-hi">विवरण देखें</span>
 <span class="lang-mr">तपशील पहा</span>
@@ -400,6 +449,7 @@
 </div>
 </div>
 </article>
+
 <!-- Friday -->
 <article class="note-card sketch-border p-stack-sm flex flex-col justify-between transform -rotate-1 relative lg:col-span-2" onclick="openModal('Friday', 'Aloo Paratha &amp; Curd', 'Two whole wheat flatbreads stuffed with spiced mashed potatoes. Served with cool, fresh yogurt.', ['Potatoes', 'Whole wheat flour', 'Coriander', 'Green chilies', 'Yogurt'], 'Filling, comforting.')">
 <div>
@@ -407,7 +457,7 @@
 <span class="lang-en">Friday</span>
 <span class="lang-kn">ಶುಕ್ರವಾರ</span>
 <span class="lang-hi">शुक्रवार</span>
-<span class="lang-mr">शुक्रवार</span>
+<span class="lang-mr">ಶುಕ್ರವಾರ</span>
 </h2>
 <h3 class="font-body-lg text-body-lg text-on-surface font-semibold">
 <span class="lang-en">Aloo Paratha &amp; Curd</span>
@@ -419,7 +469,7 @@
 </div>
 <div class="flex justify-between items-end">
 <span class="font-label-caps text-label-caps text-secondary underline decoration-wavy decoration-outline">
-<span class="lang-en">View Details</span>
+<span class="lang-en">View Details &amp; Order</span>
 <span class="lang-kn">ವಿವರಗಳನ್ನು ನೋಡಿ</span>
 <span class="lang-hi">विवरण देखें</span>
 <span class="lang-mr">तपशील पहा</span>
@@ -427,6 +477,7 @@
 <span class="font-headline-md text-headline-md text-on-surface">₹69</span>
 </div>
 </article>
+
 <!-- Saturday -->
 <article class="note-card sketch-border p-stack-sm flex flex-col justify-between transform rotate-2 relative" onclick="openModal('Saturday', 'Chole Bhature', 'Spicy, tangy chickpea curry served with a soft, fluffy fried bread. A weekend treat.', ['Chickpeas', 'Refined flour', 'Amchoor powder', 'Onions', 'Green chilies'], 'Indulgent, high protein.')">
 <div class="absolute bottom-2 left-2 w-12 h-12 border-2 border-outline rounded-full opacity-20 transform -translate-x-2 translate-y-2"></div>
@@ -443,11 +494,11 @@
 <span class="lang-hi">छोले भटूरे</span>
 <span class="lang-mr">छोले भटूरे</span>
 </h3>
-<span class="material-symbols-outlined text-outline mt-2 text-3xl">local_pizza</span> <!-- Fallback icon conceptually -->
+<span class="material-symbols-outlined text-outline mt-2 text-3xl">local_pizza</span>
 </div>
 <div class="flex justify-between items-end">
 <span class="font-label-caps text-label-caps text-secondary underline decoration-wavy decoration-outline">
-<span class="lang-en">View Details</span>
+<span class="lang-en">View Details &amp; Order</span>
 <span class="lang-kn">ವಿವರಗಳನ್ನು ನೋಡಿ</span>
 <span class="lang-hi">विवरण देखें</span>
 <span class="lang-mr">तपशील पहा</span>
@@ -455,8 +506,9 @@
 <span class="font-headline-md text-headline-md text-on-surface">₹69</span>
 </div>
 </article>
+
 <!-- Sunday -->
-<article class="note-card sketch-border p-stack-sm flex flex-col justify-between transform -rotate-3 lg:col-span-3 xl:col-span-3 relative bg-surface-bright" onclick="openModal('Sunday', 'Special Thali', 'A bit of everything. Dal, a seasonal dry sabzi, rice, two rotis, and a small sweet.', ['Lentils', 'Seasonal Veg', 'Rice', 'Wheat flour', 'Jaggery'], 'Balanced meal, varied nutrients.')">
+<article class="note-card sketch-border p-stack-sm flex flex-col justify-between transform -rotate-3 lg:col-span-3 xl:col-span-4 relative bg-surface-bright" onclick="openModal('Sunday', 'Special Thali', 'A bit of everything. Dal, a seasonal dry sabzi, rice, two rotis, and a small sweet.', ['Lentils', 'Seasonal Veg', 'Rice', 'Wheat flour', 'Jaggery'], 'Balanced meal, varied nutrients.')">
 <div class="flex justify-between items-start w-full">
 <div>
 <h2 class="font-headline-sm text-headline-sm text-tertiary-container mb-2 border-b border-surface-variant pb-1 inline-block">
@@ -466,7 +518,7 @@
 <span class="lang-mr">रविवार</span>
 </h2>
 <h3 class="font-display-lg text-headline-sm md:text-display-lg text-on-surface font-semibold leading-none mb-2">
-<span class="lang-en">Special Thali</span>
+<span class="lang-en">Belagavi Special Thali</span>
 <span class="lang-kn">ವಿಶೇಷ ಥಾಲಿ</span>
 <span class="lang-hi">स्पेशल थाली</span>
 <span class="lang-mr">स्पेशल थाळी</span>
@@ -474,8 +526,8 @@
 <p class="font-body-md text-body-md text-on-surface-variant max-w-md hidden md:block">
 <span class="lang-en">The ultimate end-of-week feast. A little bit of everything to reset for Monday.</span>
 <span class="lang-kn">ವಾರಾಂತ್ಯದ ಹಬ್ಬ. ಸೋಮವಾರಕ್ಕೆ ಸಿದ್ಧರಾಗಲು ಎಲ್ಲವೂ ಸ್ವಲ್ಪ.</span>
-<span class="lang-hi">हफ्ते के अंत की शानदार दावत। सोमवार के लिए रीसेट करने के लिए सब कुछ थोड़ा-थोड़ा।</span>
-<span class="lang-mr">आठवड्याच्या शेवटी खास मेजवानी. सोमवारसाठी तयार होण्यासाठी सर्वकाही थोडे थोडे.</span>
+<span class="lang-hi">हफ्ते के अंत की शानदार दावत।</span>
+<span class="lang-mr">आठवड्याच्या शेवटी खास मेजवानी.</span>
 </p>
 </div>
 <div class="flex gap-2">
@@ -491,7 +543,7 @@
 </span>
 <div class="flex flex-col items-end">
 <span class="font-label-caps text-label-caps text-secondary underline decoration-wavy decoration-outline mb-1">
-<span class="lang-en">View Details</span>
+<span class="lang-en">View Details &amp; Order</span>
 <span class="lang-kn">ವಿವರಗಳನ್ನು ನೋಡಿ</span>
 <span class="lang-hi">विवरण देखें</span>
 <span class="lang-mr">तपशील पहा</span>
@@ -502,24 +554,81 @@
 </article>
 </div>
 </main>
-<!-- Footer -->
-<footer class="w-full py-stack-md bg-surface-container-highest border-t-2 border-outline z-10">
-<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop gap-stack-sm max-w-7xl mx-auto w-full">
-<div class="font-headline-sm text-headline-sm text-on-surface"><img alt="Authana Logo" class="h-12 w-auto object-contain" id="footerLogo" src="https://lh3.googleusercontent.com/aida/AP1WRLuZtSbXAFyM-zUJ4V7u5c4tleOcC6ECBFDl_Iac_Koqut2YTJjPU48WMXLDu0bN4nmSmvh8DewUt1RIgGYuJDhuSFHyGcTn_HcRNvt9PEmlJF7LehJn07XzRO1-zCdXAO08GElRR_MXM28h1_fe6TIJN2jI362fasHN1zi6_0qQpvsbN5yOntUw8W5RJmuAazshykDMW9JSidUDKw9UjJWSkng7NDI4AqfLHOMnGg8jhwCsxSbDoQmYGKYy"/></div>
-<div class="flex items-center gap-4">
-<div class="font-label-caps text-label-caps text-on-secondary-fixed-variant">© 2024 MessyKitchen - Handcrafted with care.</div>
+
+<!-- Rich 4-Column Handcrafted Belagavi Footer -->
+<footer class="w-full py-12 bg-surface-container-highest border-t-2 border-outline z-10 mt-auto">
+<div class="px-5 md:px-8 lg:px-16 w-full max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-outline/30">
+
+<!-- Col 1: Brand & Location -->
+<div class="flex flex-col gap-3">
+<div class="font-headline-sm text-headline-sm text-on-surface">
+  <img alt="Authana Logo" class="site-logo h-10 w-auto object-contain" id="footerLogo" src="https://lh3.googleusercontent.com/aida/AP1WRLuZtSbXAFyM-zUJ4V7u5c4tleOcC6ECBFDl_Iac_Koqut2YTJjPU48WMXLDu0bN4nmSmvh8DewUt1RIgGYuJDhuSFHyGcTn_HcRNvt9PEmlJF7LehJn07XzRO1-zCdXAO08GElRR_MXM28h1_fe6TIJN2jI362fasHN1zi6_0qQpvsbN5yOntUw8W5RJmuAazshykDMW9JSidUDKw9UjJWSkng7NDI4AqfLHOMnGg8jhwCsxSbDoQmYGKYy"/>
+</div>
+<p class="font-body-md text-sm text-on-surface-variant">
+Good Food, No Fuss. Honest home-cooked thalis prepared fresh in Belagavi for students, workers &amp; families. Every dish is ₹69.
+</p>
+<div class="inline-flex items-center gap-1.5 text-xs font-label-caps text-primary bg-primary/10 sketch-border px-3 py-1.5 w-max">
+<span class="material-symbols-outlined" style="font-size:16px;">location_on</span>
+Belagavi, Karnataka
+</div>
+</div>
+
+<!-- Col 2: Navigation Links -->
+<div class="flex flex-col gap-3">
+<h4 class="font-label-caps text-label-caps uppercase text-primary font-bold tracking-wider">Quick Navigation</h4>
+<ul class="flex flex-col gap-2 text-sm font-body-md text-on-surface-variant">
+<li><a href="index.html#story" class="hover:text-primary transition-colors">Our Story</a></li>
+<li><a href="menu.html" class="hover:text-primary transition-colors">Today's Menu (All ₹69)</a></li>
+<li><a href="community.html" class="hover:text-primary transition-colors">Belagavi Community</a></li>
+<li><button onclick="openOrderModal()" class="hover:text-primary text-left cursor-pointer font-bold text-primary">Order Food (WhatsApp)</button></li>
+</ul>
+</div>
+
+<!-- Col 3: Hours & Delivery Slots -->
+<div class="flex flex-col gap-3">
+<h4 class="font-label-caps text-label-caps uppercase text-primary font-bold tracking-wider">Hours &amp; Delivery</h4>
+<div class="text-xs font-label-caps text-on-surface flex flex-col gap-1.5">
+<p><strong>Working Hours:</strong> 6:00 PM – 10:00 PM (Daily)</p>
+<p><strong>Slot 1 Delivery (8 PM):</strong> Order by 7:30 PM</p>
+<p><strong>Slot 2 Delivery (10 PM):</strong> Order by 9:30 PM</p>
+<p class="text-primary font-bold">Express Delivery (+₹20): Delivered within 30 min</p>
+</div>
+<p class="text-xs text-on-surface-variant mt-1 leading-snug">
+<strong>Coverage:</strong> Majagaon, Udyambag, Piranwadi, Angol, Mahaveer Nagar, Brahma Nagar, Tilakwadi, Bhagya Nagar, Vadgaon, Shahapur, Rani Chennamma Nagar, Machhe, Khasbag, Chidambar Nagar.
+</p>
+</div>
+
+<!-- Col 4: Contact & Order CTA -->
+<div class="flex flex-col gap-3">
+<h4 class="font-label-caps text-label-caps uppercase text-primary font-bold tracking-wider">Contact &amp; Order</h4>
+<p class="text-xs font-label-caps text-on-surface">Order directly via WhatsApp or phone:</p>
+<button onclick="openOrderModal()" class="sketch-border sketch-shadow bg-primary text-on-primary font-label-caps px-4 py-2.5 uppercase tracking-wider text-xs flex items-center justify-center gap-2 cursor-pointer">
+<span class="material-symbols-outlined" style="font-size:16px;">chat</span> Order on WhatsApp
+</button>
+<a href="tel:+91 8310786409" class="sketch-border bg-surface text-on-surface font-label-caps px-4 py-2.5 uppercase tracking-wider text-xs flex items-center justify-center gap-2 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" style="font-size:16px;">call</span> Call: +91 8310786409
+</a>
+<span class="text-xs text-on-surface-variant font-label-caps">Email: hello@authana.in</span>
+</div>
+
+</div>
+
+<div class="pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-label-caps text-on-secondary-fixed-variant opacity-80">
+<div>© 2024 Authana Belagavi — Handcrafted with care. All dishes ₹69.</div>
+<div class="flex gap-4">
+<span>Belagavi, Karnataka</span> · <span>WhatsApp Ordering</span>
+</div>
 </div>
 </div>
 </footer>
-<!-- Modal Backdrop & Container -->
+
+<!-- Item Details Modal Backdrop & Container -->
 <div class="fixed inset-0 z-50 hidden items-center justify-center p-gutter bg-on-surface/20 backdrop-blur-sm" id="itemModal">
-<!-- Modal Content -->
-<div class="modal-enter bg-surface w-full max-w-lg sketch-border p-stack-md relative overflow-y-auto max-h-[90vh] hide-scroll">
-<!-- Close Button -->
+<div class="bg-surface w-full max-w-lg sketch-border p-stack-md relative overflow-y-auto max-h-[90vh] hide-scroll">
 <button class="absolute top-4 right-4 p-2 text-on-surface hover:text-primary hover:rotate-90 transition-all duration-200" onclick="closeModal()">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 700;">close</span>
 </button>
-<!-- Dynamic Content Area -->
 <div class="pr-8">
 <div class="inline-block bg-surface-variant text-on-surface px-2 py-1 font-label-caps text-label-caps mb-4 transform -rotate-2" id="modalDay">Day</div>
 <h2 class="font-display-lg text-display-lg text-on-surface mb-2 leading-tight" id="modalTitle">Food Name</h2>
@@ -542,7 +651,6 @@
 <span class="lang-mr">यात काय आहे</span>
 </h4>
 <ul class="font-body-md text-body-md list-none space-y-1" id="modalIngredients">
-<!-- Populated by JS -->
 </ul>
 </div>
 <div>
@@ -556,30 +664,64 @@
 </div>
 </div>
 <div class="mt-stack-md pt-stack-sm border-t border-surface-variant flex justify-end">
-<button class="font-body-md text-body-md text-on-primary bg-primary border-2 border-on-surface px-6 py-2 hover:scale-105 transition-transform duration-200 active:scale-95 shadow-[2px_2px_0px_theme('colors.on-surface')] w-full sm:w-auto">
-<span class="lang-en">Add to Order</span>
-<span class="lang-kn">ಆರ್ಡರ್‌ಗೆ ಸೇರಿಸಿ</span>
-<span class="lang-hi">ऑर्डर में जोड़ें</span>
-<span class="lang-mr">ऑर्डरमध्ये जोडा</span>
+<button onclick="triggerOrderFromDetailModal()" class="font-body-md text-body-md text-on-primary bg-primary border-2 border-on-surface px-6 py-2 hover:scale-105 transition-transform duration-200 active:scale-95 shadow-[2px_2px_0px_theme('colors.on-surface')] w-full sm:w-auto flex items-center justify-center gap-2 cursor-pointer">
+<span class="material-symbols-outlined" style="font-size:18px;">shopping_bag</span>
+<span class="lang-en">Order Food on WhatsApp (₹69)</span>
+<span class="lang-kn">ಆರ್ಡರ್ ಮಾಡಿ (₹69)</span>
+<span class="lang-hi">ऑर्डर करें (₹69)</span>
+<span class="lang-mr">ऑर्डर करा (₹69)</span>
 </button>
 </div>
 </div>
 </div>
 </div>
+
+<!-- WHATSAPP REDIRECT WARNING MODAL -->
+<div id="whatsapp-warning-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-on-surface/50 backdrop-blur-sm p-4 overflow-y-auto">
+<div class="bg-surface sketch-border sketch-shadow w-full max-w-md p-6 relative rounded transform transition-all text-center">
+<button onclick="closeWhatsAppModal()" class="absolute top-4 right-4 text-on-surface hover:text-primary cursor-pointer p-1">
+<span class="material-symbols-outlined" style="font-size:24px;">close</span>
+</button>
+
+<div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto mb-3">
+<span class="material-symbols-outlined" style="font-size:28px;">chat</span>
+</div>
+
+<div class="masking-tape font-label-caps text-label-caps mb-2 transform -rotate-1 text-xs">
+External Redirect
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Order on WhatsApp</h3>
+<p class="font-body-md text-sm text-on-surface-variant mb-6 leading-relaxed">
+You are leaving the website to open WhatsApp and place your order directly with our Belagavi kitchen team (<strong class="text-on-surface">+91 8310786409</strong>).
+</p>
+
+<div class="flex flex-col sm:flex-row gap-3 justify-center">
+<button onclick="closeWhatsAppModal()" class="sketch-border bg-surface hover:bg-surface-container text-on-surface font-label-caps py-2.5 px-5 text-xs uppercase tracking-wider cursor-pointer">
+Cancel
+</button>
+<a id="whatsapp-redirect-btn" href="https://wa.me/918310786409?text=Hi%20Authana%20Belagavi!%20I%20would%20like%20to%20order%20food." target="_blank" rel="noopener" onclick="closeWhatsAppModal()" class="sketch-border sketch-shadow sketch-button bg-primary text-on-primary font-label-caps py-2.5 px-6 text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer">
+<span class="material-symbols-outlined" style="font-size:16px;">open_in_new</span> Proceed to WhatsApp
+</a>
+</div>
+</div>
+</div>
+
 <script>
+        /* ── Modal ── */
         const modal = document.getElementById('itemModal');
         const modalDay = document.getElementById('modalDay');
         const modalTitle = document.getElementById('modalTitle');
         const modalDesc = document.getElementById('modalDesc');
         const modalIngredients = document.getElementById('modalIngredients');
         const modalNutrition = document.getElementById('modalNutrition');
+        const modalInner = modal.querySelector('.bg-surface');
+        let currentDetailTitle = '';
 
         function openModal(day, title, desc, ingredients, nutrition) {
+            currentDetailTitle = title;
             modalDay.textContent = day;
             modalTitle.textContent = title;
             modalDesc.textContent = desc;
-            
-            // Clear and populate ingredients
             modalIngredients.innerHTML = '';
             ingredients.forEach(ing => {
                 const li = document.createElement('li');
@@ -587,12 +729,13 @@
                 li.textContent = ing;
                 modalIngredients.appendChild(li);
             });
-
             modalNutrition.textContent = nutrition;
-            
             modal.classList.remove('hidden');
             modal.classList.add('flex');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            modalInner.classList.remove('modal-enter');
+            void modalInner.offsetWidth;
+            modalInner.classList.add('modal-enter');
+            document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
@@ -601,20 +744,17 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Close on backdrop click
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModal();
-            }
-        });
+        function triggerOrderFromDetailModal() {
+            closeModal();
+            openOrderModal(currentDetailTitle);
+        }
 
-        // Close on escape key
+        modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-                closeModal();
-            }
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
         });
 
+        /* ── Language ── */
         const logos = {
             'EN': 'https://lh3.googleusercontent.com/aida/AP1WRLuZtSbXAFyM-zUJ4V7u5c4tleOcC6ECBFDl_Iac_Koqut2YTJjPU48WMXLDu0bN4nmSmvh8DewUt1RIgGYuJDhuSFHyGcTn_HcRNvt9PEmlJF7LehJn07XzRO1-zCdXAO08GElRR_MXM28h1_fe6TIJN2jI362fasHN1zi6_0qQpvsbN5yOntUw8W5RJmuAazshykDMW9JSidUDKw9UjJWSkng7NDI4AqfLHOMnGg8jhwCsxSbDoQmYGKYy',
             'KN': 'https://lh3.googleusercontent.com/aida/AP1WRLvF47jQw-9t8Qx0kk93y8MT87UvGO4iyqkByP4r4zlvBeYUZcxmoTO5W5cNsgTqzOgt0ecMl4ZakM3rF9RAZRpNey_XGajMHvKZTMuJ-y2OwZdddF3sZrLVboXkkdA295CkYJH416_zxDfb8ProhK_q_aS3O7rZD4-wfm_ZmwKGz6Im-HzE9bwJWEwrDpD4UfptdIRwe3XyjTkF2okEApCk7LACaMAzaf8MZyIeuooTF7UlpYXZCxLxuFff',
@@ -626,14 +766,88 @@
             document.getElementById('headerLogo').src = logos[lang];
             document.getElementById('footerLogo').src = logos[lang];
             document.getElementById('langSwitcherHeader').value = lang;
+            const mob = document.getElementById('langSwitcherMobile');
+            if (mob) mob.value = lang;
             document.body.setAttribute('data-lang', lang);
-            localStorage.setItem('selectedLang', lang);
+            localStorage.setItem('mkLang', lang);
         }
 
-        // Initialize language from local storage if available
+        /* ── Init ── */
         document.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('selectedLang') || 'EN';
+            const savedLang = (localStorage.getItem('mkLang')
+                || (localStorage.getItem('preferredLanguage') || '').toUpperCase()
+                || localStorage.getItem('messyKitchenLang')
+                || 'EN').toUpperCase();
             changeLanguage(savedLang);
+
+            const mobileMenuBtn  = document.getElementById('mobile-menu-btn');
+            const mobileDrawer   = document.getElementById('mobile-drawer');
+            const mobileOverlay  = document.getElementById('mobile-overlay');
+            const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+
+            function openMobileMenu() {
+                mobileDrawer.classList.remove('hidden'); mobileDrawer.classList.add('flex');
+                mobileMenuIcon.textContent = 'close';
+                mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeMobileMenu() {
+                mobileDrawer.classList.add('hidden'); mobileDrawer.classList.remove('flex');
+                mobileMenuIcon.textContent = 'menu';
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+            if(mobileMenuBtn) mobileMenuBtn.addEventListener('click', () =>
+                mobileDrawer.classList.contains('hidden') ? openMobileMenu() : closeMobileMenu());
+            if(mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenu);
+
+            /* Highlight today's card */
+            const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+            const today = days[new Date().getDay()];
+            document.querySelectorAll('.note-card').forEach(card => {
+                const dayEl = card.querySelector('h2');
+                if (dayEl && dayEl.querySelector('.lang-en') &&
+                    dayEl.querySelector('.lang-en').textContent.trim() === today) {
+                    card.classList.add('today-card');
+                }
+            });
+
+            /* Scroll-progress bar */
+            const bar = document.createElement('div');
+            bar.style.cssText = 'position:fixed;top:0;left:0;height:3px;background:#a33818;z-index:100;width:0%;transition:width 0.1s linear;pointer-events:none;';
+            document.body.appendChild(bar);
+            window.addEventListener('scroll', () => {
+                const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+                bar.style.width = Math.min(pct, 100) + '%';
+            });
         });
+
+        // WHATSAPP REDIRECT WARNING MODAL LOGIC
+        function openOrderModal(itemName) {
+            const redirectBtn = document.getElementById('whatsapp-redirect-btn');
+            let targetWhatsAppUrl = 'https://wa.me/918310786409?text=Hi%20Authana%20Belagavi!%20I%20would%20like%20to%20order%20food.';
+            if(itemName) {
+                targetWhatsAppUrl = `https://wa.me/918310786409?text=Hi%20Authana%20Belagavi!%20I%20would%20like%20to%20order%20${encodeURIComponent(itemName)}%20(%E2%82%B969).`;
+            }
+            if(redirectBtn) {
+                redirectBtn.href = targetWhatsAppUrl;
+            }
+            const modal = document.getElementById('whatsapp-warning-modal');
+            if(modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeWhatsAppModal() {
+            const modal = document.getElementById('whatsapp-warning-modal');
+            if(modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = 'auto';
+            }
+        }
     </script>
-</body></html>
+</body>
+</html>

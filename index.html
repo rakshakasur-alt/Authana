@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en" style=""><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>MessyKitchen - Good Food, No Fuss</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="light" lang="en" style="">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Authana</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -96,29 +102,34 @@
             }
         }
     </script>
-<style>
+    <style>
         /* Custom Sketchy Styles */
         .sketch-border {
             border: 2px solid #1a1c1b;
-            border-radius: 4px 6px 3px 5px / 5px 3px 6px 4px; /* Organic feel */
+            border-radius: 4px 6px 3px 5px / 5px 3px 6px 4px;
+            /* Organic feel */
         }
+
         .sketch-shadow {
             box-shadow: 4px 4px 0 #1a1c1b;
         }
+
         .sketch-button {
             transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
+
         .sketch-button:hover {
             transform: scale(1.05) rotate(1deg);
         }
+
         .sketch-button:active {
             transform: scale(0.95);
         }
-        
+
         /* Subtle cross-hatch pattern for backgrounds */
         .cross-hatch-bg {
-            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(139, 113, 106, 0.05) 10px, rgba(139, 113, 106, 0.05) 11px), 
-                              repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(139, 113, 106, 0.05) 10px, rgba(139, 113, 106, 0.05) 11px);
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(139, 113, 106, 0.05) 10px, rgba(139, 113, 106, 0.05) 11px),
+                repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(139, 113, 106, 0.05) 10px, rgba(139, 113, 106, 0.05) 11px);
         }
 
         .pencil-line {
@@ -128,7 +139,8 @@
             margin-left: auto;
             margin-right: auto;
             opacity: 0.5;
-            border-radius: 50%; /* soft edges */
+            border-radius: 50%;
+            /* soft edges */
         }
 
         .masking-tape {
@@ -139,279 +151,502 @@
             display: inline-block;
         }
 
-        .lang-content { display: none; }
-        .lang-content.active { display: block; }
-        .lang-content-inline { display: none; }
-        .lang-content-inline.active { display: inline; }
-        .lang-content-inline-block { display: none; }
-        .lang-content-inline-block.active { display: inline-block; }
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        .lang-content-inline {
+            display: none;
+        }
+
+        .lang-content-inline.active {
+            display: inline;
+        }
+
+        .lang-content-inline-block {
+            display: none;
+        }
+
+        .lang-content-inline-block.active {
+            display: inline-block;
+        }
+
+        /* Smooth scroll for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Bounce animation for the scroll-cue arrow */
+        @keyframes bounce-y {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(4px);
+            }
+        }
     </style>
 </head>
+
 <body class="bg-surface text-on-surface font-body-md antialiased cross-hatch-bg min-h-screen flex flex-col">
-<!-- TopNavBar -->
-<header class="w-full top-0 sticky bg-surface z-50 transition-all duration-300" id="main-nav">
-<!-- Structural shell from JSON -->
-<div class="flex justify-between items-center px-gutter py-stack-sm max-w-7xl mx-auto w-full border-b-2 border-outline flat no shadows">
-<!-- Brand Logo -->
-<a class="font-headline-md text-headline-md text-primary flex items-center gap-2 hover:scale-105 hover:rotate-1 transition-transform duration-200" href="#"><img alt="Authana Logo" class="site-logo h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLuZtSbXAFyM-zUJ4V7u5c4tleOcC6ECBFDl_Iac_Koqut2YTJjPU48WMXLDu0bN4nmSmvh8DewUt1RIgGYuJDhuSFHyGcTn_HcRNvt9PEmlJF7LehJn07XzRO1-zCdXAO08GElRR_MXM28h1_fe6TIJN2jI362fasHN1zi6_0qQpvsbN5yOntUw8W5RJmuAazshykDMW9JSidUDKw9UjJWSkng7NDI4AqfLHOMnGg8jhwCsxSbDoQmYGKYy"/></a>
-<!-- Navigation Links (Web) -->
-<nav class="hidden md:flex gap-stack-md items-center font-body-md text-body-md">
-<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:scale-105 hover:rotate-1 transition-transform duration-200" href="#">
-<span class="lang-content-inline active" data-lang="en">Our Story</span>
-<span class="lang-content-inline" data-lang="kn">ನಮ್ಮ ಕಥೆ</span>
-<span class="lang-content-inline" data-lang="hi">हमारी कहानी</span>
-<span class="lang-content-inline" data-lang="mr">आमची गोष्ट</span>
-</a>
-<a class="text-secondary hover:scale-105 hover:rotate-1 transition-transform duration-200" href="menu.html">
-<span class="lang-content-inline active" data-lang="en">The Menu</span>
-<span class="lang-content-inline" data-lang="kn">ಮೆನು</span>
-<span class="lang-content-inline" data-lang="hi">मेन्यू</span>
-<span class="lang-content-inline" data-lang="mr">मेनू</span>
-</a>
-<a class="text-secondary hover:scale-105 hover:rotate-1 transition-transform duration-200" href="community.html">
-<span class="lang-content-inline active" data-lang="en">Community</span>
-<span class="lang-content-inline" data-lang="kn">ಸಮುದಾಯ</span>
-<span class="lang-content-inline" data-lang="hi">समुदाय</span>
-<span class="lang-content-inline" data-lang="mr">समुदाय</span>
-</a>
-</nav>
-<!-- Trailing Primary Action and Language Switcher -->
-<div class="flex items-center gap-4">
-<button class="hidden md:block sketch-border sketch-shadow sketch-button bg-primary text-on-primary font-label-caps text-label-caps px-6 py-3 uppercase tracking-wider">
-<span class="lang-content-inline active" data-lang="en">Try Food</span>
-<span class="lang-content-inline" data-lang="kn">ಆಹಾರ ಪ್ರಯತ್ನಿಸಿ</span>
-<span class="lang-content-inline" data-lang="hi">खाना आज़माएं</span>
-<span class="lang-content-inline" data-lang="mr">अन्न वापरून पहा</span>
-</button>
-<select class="language-switcher bg-transparent sketch-border px-3 py-1 font-label-caps text-label-caps text-on-surface cursor-pointer focus:outline-none">
-<option value="en">English</option>
-<option value="kn">Kannada</option>
-<option value="hi">Hindi</option>
-<option value="mr">Marathi</option>
-</select>
-</div>
-<!-- Mobile Menu Toggle -->
-<button class="md:hidden text-primary">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-</header>
-<!-- Main Canvas -->
-<main class="flex-grow">
-<!-- Hero Section -->
-<section class="max-w-7xl mx-auto px-gutter py-stack-lg md:py-[100px] flex flex-col lg:flex-row items-center gap-stack-lg relative overflow-hidden min-h-[calc(100vh-80px)] lg:min-h-0 lg:h-[calc(100vh-80px)] lg:max-h-[720px]">
-<!-- Asymmetric text block -->
-<div class="w-full lg:w-1/2 flex flex-col items-start z-10 relative">
-<!-- Tape accent -->
-<div class="masking-tape font-label-caps text-label-caps mb-stack-sm transform -rotate-2">
-<span class="lang-content-inline active" data-lang="en">Freshly Scribbled Today</span>
-<span class="lang-content-inline" data-lang="kn">ಇಂದು ಹೊಸದಾಗಿ ಬರೆಯಲಾಗಿದೆ</span>
-<span class="lang-content-inline" data-lang="hi">आज ताज़ा लिखा गया</span>
-<span class="lang-content-inline" data-lang="mr">आज नव्याने लिहिले</span>
-</div>
-<h1 class="font-display-lg text-display-lg text-on-surface mb-stack-sm relative">
-<span class="lang-content-inline active" data-lang="en">Good Food, <br/></span>
-<span class="lang-content-inline" data-lang="kn">ಉತ್ತಮ ಆಹಾರ, <br/></span>
-<span class="lang-content-inline" data-lang="hi">अच्छा खाना, <br/></span>
-<span class="lang-content-inline" data-lang="mr">चांगले अन्न, <br/></span>
-<span class="relative inline-block">
-<span class="lang-content-inline active" data-lang="en">No Fuss.</span>
-<span class="lang-content-inline" data-lang="kn">ಯಾವುದೇ ಗಡಿಬಿಡಿಯಿಲ್ಲ.</span>
-<span class="lang-content-inline" data-lang="hi">कोई झंझट नहीं।</span>
-<span class="lang-content-inline" data-lang="mr">कोणताही गोंधळ नाही.</span>
-<!-- Sketchy underline graphic (CSS) -->
-<span class="absolute bottom-2 left-0 w-full h-[4px] bg-primary rounded-full transform -rotate-1 opacity-80" style="filter: url(#rough-edge);"></span>
-</span>
-</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-md max-w-md leading-relaxed">
-<span class="lang-content-inline active" data-lang="en">index-style meals delivered with a sketch of love. No artificial gloss, just honest, messy goodness straight from our kitchen to yours.</span>
-<span class="lang-content-inline" data-lang="kn">ಪ್ರೀತಿಯ ರೇಖಾಚಿತ್ರದೊಂದಿಗೆ ಮನೆ-ಶೈಲಿಯ ಊಟವನ್ನು ತಲುಪಿಸಲಾಗುತ್ತದೆ. ಯಾವುದೇ ಕೃತಕ ಹೊಳಪು ಇಲ್ಲ, ನಮ್ಮ ಅಡುಗೆಮನೆಯಿಂದ ನಿಮ್ಮ ಅಡುಗೆಮನೆಗೆ ಪ್ರಾಮಾಣಿಕ, ಗೊಂದಲಮಯ ಒಳ್ಳೆಯತನ.</span>
-<span class="lang-content-inline" data-lang="hi">प्यार के स्केच के साथ घर-शैली का भोजन वितरित किया गया। कोई कृत्रिम चमक नहीं, बस हमारी रसोई से आपकी रसोई तक ईमानदार, गन्दी अच्छाई।</span>
-<span class="lang-content-inline" data-lang="mr">प्रेमाच्या रेखाटनासह घरच्या शैलीतील जेवण दिले जाते. कोणतीही कृत्रिम चमक नाही, फक्त आमच्या स्वयंपाकघरातून तुमच्यापर्यंत प्रामाणिक, गोंधळलेला चांगुलपणा.</span>
-</p>
-<div class="flex items-center gap-gutter">
-<button class="sketch-border sketch-shadow sketch-button bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 uppercase tracking-wider text-lg">
-<span class="lang-content-inline active" data-lang="en">Try Food</span>
-<span class="lang-content-inline" data-lang="kn">ಆಹಾರ ಪ್ರಯತ್ನಿಸಿ</span>
-<span class="lang-content-inline" data-lang="hi">खाना आज़माएं</span>
-<span class="lang-content-inline" data-lang="mr">अन्न वापरून पहा</span>
-</button>
-<!-- Hand-drawn arrow indication -->
-<div class="hidden sm:flex items-center text-outline transform rotate-12 opacity-70">
-<span class="material-symbols-outlined text-3xl">arrow_right_alt</span>
-<span class="font-label-caps text-label-caps ml-2">
-<span class="lang-content-inline active" data-lang="en">Grab yours</span>
-<span class="lang-content-inline" data-lang="kn">ನಿಮ್ಮದನ್ನು ಪಡೆದುಕೊಳ್ಳಿ</span>
-<span class="lang-content-inline" data-lang="hi">अपना ले लो</span>
-<span class="lang-content-inline" data-lang="mr">तुमचे पकडा</span>
-</span>
-</div>
-</div>
-</div>
-<!-- Illustration Canvas -->
-<div class="w-full lg:w-1/2 relative h-[400px] lg:h-[480px] flex justify-center items-center">
-<!-- Abstract 'Tiffin' Illustration placeholder using a colored div to represent the sketch -->
-<div class="relative w-full max-w-md aspect-square sketch-border bg-surface-container-low p-stack-md flex flex-col justify-between transform rotate-2">
-<!-- Tiffin Tiers (Abstract representation) -->
-<div class="w-full h-1/3 sketch-border bg-surface relative flex items-center justify-center">
-<span class="material-symbols-outlined text-outline text-5xl opacity-50">ramen_dining</span>
-</div>
-<div class="w-full h-1/3 sketch-border bg-surface relative flex items-center justify-center transform -translate-x-2">
-<span class="material-symbols-outlined text-outline text-5xl opacity-50">tapas</span>
-</div>
-<div class="w-full h-1/3 sketch-border bg-surface relative flex items-center justify-center transform translate-x-1">
-<span class="material-symbols-outlined text-outline text-5xl opacity-50">rice_bowl</span>
-</div>
-<!-- Decorative steam lines -->
-<div class="absolute -top-12 left-1/2 transform -translate-x-1/2 flex gap-4 text-outline opacity-40">
-<span class="material-symbols-outlined" style="font-size: 40px;">water_drop</span>
-<span class="material-symbols-outlined" style="font-size: 60px; transform: translateY(-10px);">water_drop</span>
-<span class="material-symbols-outlined" style="font-size: 40px;">water_drop</span>
-</div>
-</div>
-<!-- Floating abstract elements -->
-<div class="absolute top-10 right-10 text-primary transform rotate-45 opacity-50">
-<span class="material-symbols-outlined text-4xl">local_florist</span>
-</div>
-<div class="absolute bottom-10 left-10 text-tertiary transform -rotate-12 opacity-50">
-<span class="material-symbols-outlined text-4xl">eco</span>
-</div>
-</div>
-</section>
-<!-- Blackboard Menu Section -->
-<section class="max-w-5xl mx-auto px-gutter py-stack-lg relative pb-stack-lg">
-<div class="text-center mb-stack-lg">
-<h2 class="font-headline-md text-headline-md text-on-surface inline-block relative">
-<span class="lang-content-inline active" data-lang="en">Today's Canvas</span>
-<span class="lang-content-inline" data-lang="kn">ಇಂದಿನ ಕ್ಯಾನ್ವಾಸ್</span>
-<span class="lang-content-inline" data-lang="hi">आज का कैनवास</span>
-<span class="lang-content-inline" data-lang="mr">आजचा कॅनव्हास</span>
-<span class="absolute -bottom-2 left-1/4 w-1/2 h-[2px] bg-outline transform -rotate-2"></span>
-</h2>
-</div>
-<!-- Bento-style sketch grid for menu -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-<!-- Menu Item 1 -->
-<div class="sketch-border p-stack-md bg-surface flex flex-col gap-unit relative group hover:-translate-y-1 transition-transform duration-300">
-<div class="absolute top-2 right-2 text-outline opacity-30 group-hover:opacity-100 transition-opacity">
-<span class="material-symbols-outlined">favorite</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface">
-<span class="lang-content-inline active" data-lang="en">Mom's Dal</span>
-<span class="lang-content-inline" data-lang="kn">ಅಮ್ಮನ ದಾಲ್</span>
-<span class="lang-content-inline" data-lang="hi">माँ की दाल</span>
-<span class="lang-content-inline" data-lang="mr">आईची डाळ</span>
-</h3>
-<p class="font-body-md text-on-surface-variant flex-grow">
-<span class="lang-content-inline active" data-lang="en">Slow-cooked yellow lentils with a generous cumin temper.</span>
-<span class="lang-content-inline" data-lang="kn">ಉದಾರವಾದ ಜೀರಿಗೆ ಒಗ್ಗರಣೆಯೊಂದಿಗೆ ನಿಧಾನವಾಗಿ ಬೇಯಿಸಿದ ಹಳದಿ ಮಸೂರ.</span>
-<span class="lang-content-inline" data-lang="hi">प्रचुर मात्रा में जीरा तड़के के साथ धीमी आंच पर पकाई गई पीली दाल।</span>
-<span class="lang-content-inline" data-lang="mr">उदार जिरे टेंपरसह संथ-शिजवलेली पिवळी मसूर.</span>
-</p>
-<div class="pencil-line my-2 w-full"></div>
-<div class="flex justify-between items-center mt-auto">
-<span class="font-label-caps text-label-caps text-secondary">
-<span class="lang-content-inline active" data-lang="en">A staple</span>
-<span class="lang-content-inline" data-lang="kn">ಒಂದು ಪ್ರಧಾನ</span>
-<span class="lang-content-inline" data-lang="hi">एक मुख्य</span>
-<span class="lang-content-inline" data-lang="mr">एक मुख्य</span>
-</span>
-<span class="font-headline-sm text-headline-sm text-primary">₹120</span>
-</div>
-</div>
-<!-- Menu Item 2 -->
-<div class="sketch-border p-stack-md bg-surface-container-low flex flex-col gap-unit relative transform md:translate-y-4 group hover:-translate-y-1 transition-transform duration-300">
-<div class="absolute top-2 right-2 text-outline opacity-30 group-hover:opacity-100 transition-opacity">
-<span class="material-symbols-outlined">local_dining</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface">
-<span class="lang-content-inline active" data-lang="en">Hand-rolled Rotis</span>
-<span class="lang-content-inline" data-lang="kn">ಕೈಯಿಂದ ಉರುಳಿಸಿದ ರೊಟ್ಟಿಗಳು</span>
-<span class="lang-content-inline" data-lang="hi">हाथ से बेली हुई रोटियां</span>
-<span class="lang-content-inline" data-lang="mr">हाताने लाटलेल्या रोट्या</span>
-</h3>
-<p class="font-body-md text-on-surface-variant flex-grow">
-<span class="lang-content-inline active" data-lang="en">Whole wheat flatbreads, puffed to perfection over open flame.</span>
-<span class="lang-content-inline" data-lang="kn">ಸಂಪೂರ್ಣ ಗೋಧಿ ಫ್ಲಾಟ್ಬ್ರೆಡ್ಗಳು, ತೆರೆದ ಜ್ವಾಲೆಯ ಮೇಲೆ ಪರಿಪೂರ್ಣತೆಗೆ ಉಬ್ಬುತ್ತವೆ.</span>
-<span class="lang-content-inline" data-lang="hi">साबुत गेहूं की फ्लैटब्रेड, खुली आंच पर पूरी तरह से फूली हुई।</span>
-<span class="lang-content-inline" data-lang="mr">संपूर्ण गव्हाचे फ्लॅटब्रेड, उघड्या ज्वालावर परिपूर्णतेसाठी फुगलेले.</span>
-</p>
-<div class="pencil-line my-2 w-full"></div>
-<div class="flex justify-between items-center mt-auto">
-<span class="font-label-caps text-label-caps text-secondary">
-<span class="lang-content-inline active" data-lang="en">Set of 4</span>
-<span class="lang-content-inline" data-lang="kn">4 ರ ಸೆಟ್</span>
-<span class="lang-content-inline" data-lang="hi">4 का सेट</span>
-<span class="lang-content-inline" data-lang="mr">४ चा संच</span>
-</span>
-<span class="font-headline-sm text-headline-sm text-primary">₹40</span>
-</div>
-</div>
-<!-- Menu Item 3 -->
-<div class="sketch-border p-stack-md bg-surface flex flex-col gap-unit relative md:col-span-2 lg:col-span-1 group hover:-translate-y-1 transition-transform duration-300">
-<div class="absolute top-2 right-2 text-outline opacity-30 group-hover:opacity-100 transition-opacity">
-<span class="material-symbols-outlined">set_meal</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface">
-<span class="lang-content-inline active" data-lang="en">Messy Special Sabzi</span>
-<span class="lang-content-inline" data-lang="kn">ಮೆಸ್ಸಿ ವಿಶೇಷ ಸಬ್ಜಿ</span>
-<span class="lang-content-inline" data-lang="hi">गन्दी विशेष सब्जी</span>
-<span class="lang-content-inline" data-lang="mr">गोंधळलेला विशेष भाजी</span>
-</h3>
-<p class="font-body-md text-on-surface-variant flex-grow">
-<span class="lang-content-inline active" data-lang="en">Seasonal vegetables tossed in a rustic, hand-ground spice mix.</span>
-<span class="lang-content-inline" data-lang="kn">ಹಳ್ಳಿಗಾಡಿನ, ಕೈಯಿಂದ ರುಬ್ಬಿದ ಮಸಾಲೆ ಮಿಶ್ರಣದಲ್ಲಿ ಕಾಲೋಚಿತ ತರಕಾರಿಗಳನ್ನು ಎಸೆಯಲಾಗುತ್ತದೆ.</span>
-<span class="lang-content-inline" data-lang="hi">मौसमी सब्जियों को देहाती, हाथ से पिसे मसाला मिश्रण में मिलाया जाता है।</span>
-<span class="lang-content-inline" data-lang="mr">हंगामी भाज्या एका अडाणी, हाताने बारीक केलेल्या मसाल्याच्या मिश्रणात फेकल्या जातात.</span>
-</p>
-<div class="pencil-line my-2 w-full"></div>
-<div class="flex justify-between items-center mt-auto">
-<span class="font-label-caps text-label-caps text-secondary">
-<span class="lang-content-inline active" data-lang="en">Chef's mood</span>
-<span class="lang-content-inline" data-lang="kn">ಬಾಣಸಿಗನ ಮನಸ್ಥಿತಿ</span>
-<span class="lang-content-inline" data-lang="hi">शेफ का मूड</span>
-<span class="lang-content-inline" data-lang="mr">शेफचा मूड</span>
-</span>
-<span class="font-headline-sm text-headline-sm text-primary">₹150</span>
-</div>
-</div>
-</div>
-<div class="mt-stack-lg text-center">
-<a class="inline-flex items-center gap-2 font-headline-sm text-headline-sm text-primary hover:text-primary-container border-b-2 border-transparent hover:border-primary-container transition-all pb-1" href="menu.html">
-<span class="lang-content-inline active" data-lang="en">See Full Menu</span>
-<span class="lang-content-inline" data-lang="kn">ಪೂರ್ಣ ಮೆನು ನೋಡಿ</span>
-<span class="lang-content-inline" data-lang="hi">पूरा मेनू देखें</span>
-<span class="lang-content-inline" data-lang="mr">संपूर्ण मेनू पहा</span>
-<span class="material-symbols-outlined text-sm">east</span>
-</a>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="w-full py-stack-md bg-surface-container-highest border-t-2 border-outline flat no shadows mt-auto">
-<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop gap-stack-sm max-w-7xl mx-auto w-full">
-<!-- Brand Logo -->
-<div class="font-headline-sm text-headline-sm text-on-surface"><img alt="Authana Logo" class="site-logo h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLuZtSbXAFyM-zUJ4V7u5c4tleOcC6ECBFDl_Iac_Koqut2YTJjPU48WMXLDu0bN4nmSmvh8DewUt1RIgGYuJDhuSFHyGcTn_HcRNvt9PEmlJF7LehJn07XzRO1-zCdXAO08GElRR_MXM28h1_fe6TIJN2jI362fasHN1zi6_0qQpvsbN5yOntUw8W5RJmuAazshykDMW9JSidUDKw9UjJWSkng7NDI4AqfLHOMnGg8jhwCsxSbDoQmYGKYy"/></div>
-<!-- Copyright -->
-<div class="font-label-caps text-label-caps text-on-secondary-fixed-variant opacity-70 text-center md:text-right">
+    <!-- TopNavBar -->
+    <header class="w-full top-0 sticky bg-surface z-50 transition-all duration-300" id="main-nav">
+        <!-- Structural shell from JSON -->
+        <div
+            class="flex justify-between items-center px-5 md:px-8 lg:px-16 py-stack-sm w-full border-b-2 border-outline">
+            <!-- Brand Logo -->
+            <a class="font-headline-md text-headline-md text-primary flex items-center gap-2 hover:scale-105 hover:rotate-1 transition-transform duration-200"
+                href="#"><img alt="Authana Logo" class="site-logo h-12 w-auto object-contain"
+                    src="https://lh3.googleusercontent.com/aida/AP1WRLuZtSbXAFyM-zUJ4V7u5c4tleOcC6ECBFDl_Iac_Koqut2YTJjPU48WMXLDu0bN4nmSmvh8DewUt1RIgGYuJDhuSFHyGcTn_HcRNvt9PEmlJF7LehJn07XzRO1-zCdXAO08GElRR_MXM28h1_fe6TIJN2jI362fasHN1zi6_0qQpvsbN5yOntUw8W5RJmuAazshykDMW9JSidUDKw9UjJWSkng7NDI4AqfLHOMnGg8jhwCsxSbDoQmYGKYy" /></a>
+            <!-- Navigation Links (Web) -->
+            <nav class="hidden md:flex gap-stack-md items-center"
+                style="font-size: 18px; font-family: 'Work Sans', sans-serif;">
+                <a class="text-primary font-bold border-b-2 border-primary pb-1 hover:scale-105 hover:rotate-1 transition-transform duration-200"
+                    href="#">
+                    <span class="lang-content-inline active" data-lang="en">Our Story</span>
+                    <span class="lang-content-inline" data-lang="kn">ನಮ್ಮ ಕಥೆ</span>
+                    <span class="lang-content-inline" data-lang="hi">हमारी कहानी</span>
+                    <span class="lang-content-inline" data-lang="mr">आमची गोष्ट</span>
+                </a>
+                <a class="text-secondary hover:scale-105 hover:rotate-1 transition-transform duration-200"
+                    href="menu.html">
+                    <span class="lang-content-inline active" data-lang="en">The Menu</span>
+                    <span class="lang-content-inline" data-lang="kn">ಮೆನು</span>
+                    <span class="lang-content-inline" data-lang="hi">मेन्यू</span>
+                    <span class="lang-content-inline" data-lang="mr">मेनू</span>
+                </a>
+                <a class="text-secondary hover:scale-105 hover:rotate-1 transition-transform duration-200"
+                    href="community.html">
+                    <span class="lang-content-inline active" data-lang="en">Community</span>
+                    <span class="lang-content-inline" data-lang="kn">ಸಮುದಾಯ</span>
+                    <span class="lang-content-inline" data-lang="hi">समुदाय</span>
+                    <span class="lang-content-inline" data-lang="mr">समुदाय</span>
+                </a>
+            </nav>
+            <!-- Trailing Primary Action and Language Switcher -->
+            <div class="flex items-center gap-4">
+                <button onclick="closeMobileMenu(); openOrderModal();"
+                    class="hidden md:block sketch-border sketch-shadow sketch-button bg-primary text-on-primary font-label-caps px-6 py-3 uppercase tracking-wider"
+                    style="font-size: 14px;">
+                    <span class="lang-content-inline active" data-lang="en">Try Food</span>
+                    <span class="lang-content-inline" data-lang="kn">ಆಹಾರ ಪ್ರಯತ್ನಿಸಿ</span>
+                    <span class="lang-content-inline" data-lang="hi">खाना आज़माएं</span>
+                    <span class="lang-content-inline" data-lang="mr">अन्न वापरून पहा</span>
+                </button>
+                <select
+                    class="language-switcher bg-transparent sketch-border px-3 py-1 font-label-caps text-label-caps text-on-surface cursor-pointer focus:outline-none">
+                    <option value="en">English</option>
+                    <option value="kn">Kannada</option>
+                    <option value="hi">Hindi</option>
+                    <option value="mr">Marathi</option>
+                </select>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-primary" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
+                <span class="material-symbols-outlined" id="mobile-menu-icon">menu</span>
+            </button>
+        </div>
+    </header>
+    <!-- Mobile Drawer -->
+    <div class="hidden fixed inset-0 z-40 md:hidden" id="mobile-drawer">
+        <div class="absolute inset-0 bg-on-surface/30" id="mobile-overlay"></div>
+        <nav
+            class="absolute top-0 right-0 h-full w-72 bg-surface border-l-2 border-outline flex flex-col pt-20 px-6 gap-4 shadow-xl">
+            <a class="font-body-lg text-body-lg text-primary font-bold border-b-2 border-primary pb-1 w-max"
+                href="index.html">
+                <span class="lang-content-inline active" data-lang="en">Our Story</span>
+                <span class="lang-content-inline" data-lang="kn">ನಮ್ಮ ಕಥೆ</span>
+                <span class="lang-content-inline" data-lang="hi">हमारी कहानी</span>
+                <span class="lang-content-inline" data-lang="mr">आमची गोष्ट</span>
+            </a>
+            <a class="font-body-lg text-body-lg text-secondary" href="menu.html">
+                <span class="lang-content-inline active" data-lang="en">The Menu</span>
+                <span class="lang-content-inline" data-lang="kn">ಮೆನು</span>
+                <span class="lang-content-inline" data-lang="hi">मेन्यू</span>
+                <span class="lang-content-inline" data-lang="mr">मेनू</span>
+            </a>
+            <a class="font-body-lg text-body-lg text-secondary" href="community.html">
+                <span class="lang-content-inline active" data-lang="en">Community</span>
+                <span class="lang-content-inline" data-lang="kn">ಸಮುದಾಯ</span>
+                <span class="lang-content-inline" data-lang="hi">समुदाय</span>
+                <span class="lang-content-inline" data-lang="mr">समुदाय</span>
+            </a>
+            <div class="mt-4 pt-4 border-t border-outline flex flex-col gap-4">
+                <button
+                    class="sketch-border sketch-shadow sketch-button bg-primary text-on-primary font-label-caps text-label-caps px-6 py-3 uppercase tracking-wider w-full">
+                    <span class="lang-content-inline active" data-lang="en">Try Food</span>
+                    <span class="lang-content-inline" data-lang="kn">ಆಹಾರ ಪ್ರಯತ್ನಿಸಿ</span>
+                    <span class="lang-content-inline" data-lang="hi">खाना आज़माएं</span>
+                    <span class="lang-content-inline" data-lang="mr">अन्न वापरून पहा</span>
+                </button>
+                <select
+                    class="language-switcher bg-transparent sketch-border px-3 py-2 font-label-caps text-label-caps text-on-surface cursor-pointer focus:outline-none w-full">
+                    <option value="en">English</option>
+                    <option value="kn">Kannada</option>
+                    <option value="hi">Hindi</option>
+                    <option value="mr">Marathi</option>
+                </select>
+            </div>
+        </nav>
+    </div>
+    <!-- Main Canvas -->
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section
+            class="w-full px-5 md:px-8 lg:px-16 py-16 md:py-24 lg:py-32 flex flex-col lg:flex-row items-center gap-12 lg:gap-16 relative overflow-hidden"
+            id="hero">
+            <!-- Asymmetric text block -->
+            <div class="w-full lg:w-1/2 flex flex-col items-start z-10 relative">
+                <!-- Tape accent -->
+                <div class="masking-tape font-label-caps text-label-caps mb-4 transform -rotate-2">
+                    <span class="lang-content-inline active" data-lang="en">Freshly Scribbled Today</span>
+                    <span class="lang-content-inline" data-lang="kn">ಇಂದು ಹೊಸದಾಗಿ ಬರೆಯಲಾಗಿದೆ</span>
+                    <span class="lang-content-inline" data-lang="hi">आज ताज़ा लिखा गया</span>
+                    <span class="lang-content-inline" data-lang="mr">आज नव्याने लिहिले</span>
+                </div>
+                <h1 class="font-display-lg text-on-surface mb-6 relative"
+                    style="font-size: clamp(48px, 6vw, 88px); line-height: 1.05; font-weight: 800; letter-spacing: -0.02em;">
+                    <span class="lang-content-inline active" data-lang="en">Good Food, <br /></span>
+                    <span class="lang-content-inline" data-lang="kn">ಉತ್ತಮ ಆಹಾರ, <br /></span>
+                    <span class="lang-content-inline" data-lang="hi">अच्छा खाना, <br /></span>
+                    <span class="lang-content-inline" data-lang="mr">चांगले अन्न, <br /></span>
+                    <span class="relative inline-block">
+                        <span class="lang-content-inline active" data-lang="en">No Fuss.</span>
+                        <span class="lang-content-inline" data-lang="kn">ಯಾವುದೇ ಗಡಿಬಿಡಿಯಿಲ್ಲ.</span>
+                        <span class="lang-content-inline" data-lang="hi">कोई झंझट नहीं।</span>
+                        <span class="lang-content-inline" data-lang="mr">कोणताही गोंधळ नाही.</span>
+                        <span
+                            class="absolute bottom-2 left-0 w-full h-[4px] bg-primary rounded-full transform -rotate-1 opacity-80"
+                            style="filter: url(#rough-edge);"></span>
+                    </span>
+                </h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-lg leading-relaxed">
+                    <span class="lang-content-inline active" data-lang="en">Home-style meals delivered with a sketch of
+                        love. No artificial gloss, just honest, messy goodness straight from our kitchen to
+                        yours.</span>
+                    <span class="lang-content-inline" data-lang="kn">ಪ್ರೀತಿಯ ರೇಖಾಚಿತ್ರದೊಂದಿಗೆ ಮನೆ-ಶೈಲಿಯ ಊಟವನ್ನು
+                        ತಲುಪಿಸಲಾಗುತ್ತದೆ. ಯಾವುದೇ ಕೃತಕ ಹೊಳಪು ಇಲ್ಲ, ನಮ್ಮ ಅಡುಗೆಮನೆಯಿಂದ ನಿಮ್ಮ ಅಡುಗೆಮನೆಗೆ ಪ್ರಾಮಾಣಿಕ, ಗೊಂದಲಮಯ
+                        ಒಳ್ಳೆಯತನ.</span>
+                    <span class="lang-content-inline" data-lang="hi">प्यार के स्केच के साथ घर-शैली का भोजन वितरित किया
+                        गया। कोई कृत्रिम चमक नहीं, बस हमारी रसोई से आपकी रसोई तक ईमानदार, गन्दी अच्छाई।</span>
+                    <span class="lang-content-inline" data-lang="mr">प्रेमाच्या रेखाटनासह घरच्या शैलीतील जेवण दिले जाते.
+                        कोणतीही कृत्रिम चमक नाही, फक्त आमच्या स्वयंपाकघरातून तुमच्यापर्यंत प्रामाणिक, गोंधळलेला
+                        चांगुलपणा.</span>
+                </p>
+                <!-- Stats strip — adds weight below the body copy -->
+                <div class="flex items-center gap-8 mb-8 w-full">
+                    <div class="flex flex-col">
+                        <span class="font-display-lg text-primary"
+                            style="font-size: clamp(24px, 3vw, 40px); font-weight: 800; line-height: 1;">500+</span>
+                        <span class="font-label-caps text-label-caps text-secondary mt-1">
+                            <span class="lang-content-inline active" data-lang="en">Happy Meals</span>
+                            <span class="lang-content-inline" data-lang="kn">ಸಂತೋಷದ ಊಟಗಳು</span>
+                            <span class="lang-content-inline" data-lang="hi">खुशहाल भोजन</span>
+                            <span class="lang-content-inline" data-lang="mr">आनंदी जेवण</span>
+                        </span>
+                    </div>
+                    <div class="w-px h-10 bg-outline opacity-40"></div>
+                    <div class="flex flex-col">
+                        <span class="font-display-lg text-primary"
+                            style="font-size: clamp(24px, 3vw, 40px); font-weight: 800; line-height: 1;">₹69</span>
+                        <span class="font-label-caps text-label-caps text-secondary mt-1">
+                            <span class="lang-content-inline active" data-lang="en">Daily Special</span>
+                            <span class="lang-content-inline" data-lang="kn">ದೈನಂದಿನ ವಿಶೇಷ</span>
+                            <span class="lang-content-inline" data-lang="hi">दैनिक विशेष</span>
+                            <span class="lang-content-inline" data-lang="mr">रोजचे विशेष</span>
+                        </span>
+                    </div>
+                    <div class="w-px h-10 bg-outline opacity-40"></div>
+                    <div class="flex flex-col">
+                        <span class="font-display-lg text-primary"
+                            style="font-size: clamp(24px, 3vw, 40px); font-weight: 800; line-height: 1;">7</span>
+                        <span class="font-label-caps text-label-caps text-secondary mt-1">
+                            <span class="lang-content-inline active" data-lang="en">Days a Week</span>
+                            <span class="lang-content-inline" data-lang="kn">ವಾರದ ದಿನಗಳು</span>
+                            <span class="lang-content-inline" data-lang="hi">दिन एक सप्ताह</span>
+                            <span class="lang-content-inline" data-lang="mr">आठवड्याचे दिवस</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap items-center gap-gutter">
+                    <a href="./menu.html"
+                        class="sketch-border sketch-shadow sketch-button bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 uppercase tracking-wider text-lg inline-block">
+                        <span class="lang-content-inline active" data-lang="en">Try Food</span>
+                        <span class="lang-content-inline" data-lang="kn">ಆಹಾರ ಪ್ರಯತ್ನಿಸಿ</span>
+                        <span class="lang-content-inline" data-lang="hi">खाना आज़माएं</span>
+                        <span class="lang-content-inline" data-lang="mr">अन्न वापरून पहा</span>
+                    </a>
+                    <!-- Secondary scroll cue -->
+                    <a href="#menu-section"
+                        class="hidden sm:inline-flex items-center gap-1 text-secondary hover:text-primary transition-colors"
+                        style="font-size:14px; font-family:'JetBrains Mono',monospace; letter-spacing:0.06em; text-transform:uppercase;">
+                        <span class="lang-content-inline active" data-lang="en">See today's menu</span>
+                        <span class="lang-content-inline" data-lang="kn">ಇಂದಿನ ಮೆನು ನೋಡಿ</span>
+                        <span class="lang-content-inline" data-lang="hi">आज का मेनू देखें</span>
+                        <span class="lang-content-inline" data-lang="mr">आजचा मेनू पहा</span>
+                        <span class="material-symbols-outlined"
+                            style="font-size:18px; animation: bounce-y 1.6s ease-in-out infinite;">south</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Thali Illustration — top view photo -->
+            <div class="w-full lg:w-1/2 relative flex justify-center items-center py-8 lg:py-0">
+                <div class="relative" style="width: clamp(280px, 44vw, 540px);">
+                    <!-- slight tilt + sketch shadow to match page aesthetic -->
+                    <img src="./stitch_minimalist_sketch_mess/an_artisanal_hand_drawn_charcoal_sketch_of_a_traditional_indian_thali._the/thali top view.png"
+                        alt="Hand-drawn sketch of a traditional Indian thali, top view"
+                        class="w-full h-auto object-contain block"
+                        style="transform: rotate(2deg); filter: drop-shadow(5px 5px 0px rgba(26,28,27,0.18));" />
+                    <!-- Price badge — positioned relative to wrapper, not image edge -->
+                    <div class="absolute sketch-border bg-primary text-on-primary px-3 py-1.5 transform rotate-3 z-10"
+                        style="bottom: 4%; right: 0; box-shadow: 3px 3px 0 #1a1c1b;">
+                        <span class="font-label-caps text-label-caps uppercase tracking-wider" style="font-size: 13px;">
+                            <span class="lang-content-inline active" data-lang="en">Always ₹69</span>
+                            <span class="lang-content-inline" data-lang="kn">ಯಾವಾಗಲೂ ₹69</span>
+                            <span class="lang-content-inline" data-lang="hi">हमेशा ₹69</span>
+                            <span class="lang-content-inline" data-lang="mr">नेहमी ₹69</span>
+                        </span>
+                    </div>
+                    <!-- Decorative floats — kept inside wrapper so they don't overflow section -->
+                    <div class="absolute -top-2 -right-2 text-primary transform rotate-45 opacity-40"
+                        style="pointer-events:none;">
+                        <span class="material-symbols-outlined" style="font-size: 26px;">local_florist</span>
+                    </div>
+                    <div class="absolute -bottom-2 -left-2 text-tertiary transform -rotate-12 opacity-40"
+                        style="pointer-events:none;">
+                        <span class="material-symbols-outlined" style="font-size: 26px;">eco</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Divider -->
+        <div class="w-full px-5 md:px-8 lg:px-16 py-2">
+            <div class="pencil-line" style="width:100%;margin:0;"></div>
+        </div>
+        <!-- Blackboard Menu Section -->
+        <section class="w-full px-5 md:px-8 lg:px-16 py-16 md:py-24 relative" id="menu-section">
+            <div class="text-center mb-12">
+                <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider block mb-3">
+                    <span class="lang-content-inline active" data-lang="en">Straight from the kitchen</span>
+                    <span class="lang-content-inline" data-lang="kn">ಅಡುಗೆಮನೆಯಿಂದ ನೇರವಾಗಿ</span>
+                    <span class="lang-content-inline" data-lang="hi">रसोई से सीधे</span>
+                    <span class="lang-content-inline" data-lang="mr">स्वयंपाकघरातून थेट</span>
+                </span>
+                <h2 class="font-headline-md text-on-surface inline-block relative"
+                    style="font-size: clamp(28px, 3vw, 40px); font-weight: 700;">
+                    <span class="lang-content-inline active" data-lang="en">Today's Canvas</span>
+                    <span class="lang-content-inline" data-lang="kn">ಇಂದಿನ ಕ್ಯಾನ್ವಾಸ್</span>
+                    <span class="lang-content-inline" data-lang="hi">आज का कैनवास</span>
+                    <span class="lang-content-inline" data-lang="mr">आजचा कॅनव्हास</span>
+                    <span class="absolute -bottom-2 left-1/4 w-1/2 h-[2px] bg-outline transform -rotate-2"></span>
+                </h2>
+            </div>
+            <!-- Bento-style sketch grid for menu -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter lg:gap-8">
+                <!-- Menu Item 1 -->
+                <div
+                    class="sketch-border p-stack-md lg:p-10 bg-surface flex flex-col gap-unit relative group hover:-translate-y-1 transition-transform duration-300 min-h-[200px] lg:min-h-[260px]">
+                    <div
+                        class="absolute top-2 right-2 text-outline opacity-30 group-hover:opacity-100 transition-opacity">
+                        <span class="material-symbols-outlined">favorite</span>
+                    </div>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface">
+                        <span class="lang-content-inline active" data-lang="en">Mom's Dal</span>
+                        <span class="lang-content-inline" data-lang="kn">ಅಮ್ಮನ ದಾಲ್</span>
+                        <span class="lang-content-inline" data-lang="hi">माँ की दाल</span>
+                        <span class="lang-content-inline" data-lang="mr">आईची डाळ</span>
+                    </h3>
+                    <p class="font-body-md text-on-surface-variant flex-grow">
+                        <span class="lang-content-inline active" data-lang="en">Slow-cooked yellow lentils with a
+                            generous cumin temper.</span>
+                        <span class="lang-content-inline" data-lang="kn">ಉದಾರವಾದ ಜೀರಿಗೆ ಒಗ್ಗರಣೆಯೊಂದಿಗೆ ನಿಧಾನವಾಗಿ ಬೇಯಿಸಿದ
+                            ಹಳದಿ ಮಸೂರ.</span>
+                        <span class="lang-content-inline" data-lang="hi">प्रचुर मात्रा में जीरा तड़के के साथ धीमी आंच पर
+                            पकाई गई पीली दाल।</span>
+                        <span class="lang-content-inline" data-lang="mr">उदार जिरे टेंपरसह संथ-शिजवलेली पिवळी
+                            मसूर.</span>
+                    </p>
+                    <div class="pencil-line my-2 w-full"></div>
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="font-label-caps text-label-caps text-secondary">
+                            <span class="lang-content-inline active" data-lang="en">A staple</span>
+                            <span class="lang-content-inline" data-lang="kn">ಒಂದು ಪ್ರಧಾನ</span>
+                            <span class="lang-content-inline" data-lang="hi">एक मुख्य</span>
+                            <span class="lang-content-inline" data-lang="mr">एक मुख्य</span>
+                        </span>
+                        <span class="font-headline-sm text-headline-sm text-primary">₹120</span>
+                    </div>
+                </div>
+                <!-- Menu Item 2 -->
+                <div
+                    class="sketch-border p-stack-md lg:p-10 bg-surface-container-low flex flex-col gap-unit relative transform md:translate-y-4 group hover:-translate-y-1 transition-transform duration-300 min-h-[200px] lg:min-h-[260px]">
+                    <div
+                        class="absolute top-2 right-2 text-outline opacity-30 group-hover:opacity-100 transition-opacity">
+                        <span class="material-symbols-outlined">local_dining</span>
+                    </div>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface">
+                        <span class="lang-content-inline active" data-lang="en">Hand-rolled Rotis</span>
+                        <span class="lang-content-inline" data-lang="kn">ಕೈಯಿಂದ ಉರುಳಿಸಿದ ರೊಟ್ಟಿಗಳು</span>
+                        <span class="lang-content-inline" data-lang="hi">हाथ से बेली हुई रोटियां</span>
+                        <span class="lang-content-inline" data-lang="mr">हाताने लाटलेल्या रोट्या</span>
+                    </h3>
+                    <p class="font-body-md text-on-surface-variant flex-grow">
+                        <span class="lang-content-inline active" data-lang="en">Whole wheat flatbreads, puffed to
+                            perfection over open flame.</span>
+                        <span class="lang-content-inline" data-lang="kn">ಸಂಪೂರ್ಣ ಗೋಧಿ ಫ್ಲಾಟ್ಬ್ರೆಡ್ಗಳು, ತೆರೆದ ಜ್ವಾಲೆಯ
+                            ಮೇಲೆ ಪರಿಪೂರ್ಣತೆಗೆ ಉಬ್ಬುತ್ತವೆ.</span>
+                        <span class="lang-content-inline" data-lang="hi">साबुत गेहूं की फ्लैटब्रेड, खुली आंच पर पूरी तरह
+                            से फूली हुई।</span>
+                        <span class="lang-content-inline" data-lang="mr">संपूर्ण गव्हाचे फ्लॅटब्रेड, उघड्या ज्वालावर
+                            परिपूर्णतेसाठी फुगलेले.</span>
+                    </p>
+                    <div class="pencil-line my-2 w-full"></div>
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="font-label-caps text-label-caps text-secondary">
+                            <span class="lang-content-inline active" data-lang="en">Set of 4</span>
+                            <span class="lang-content-inline" data-lang="kn">4 ರ ಸೆಟ್</span>
+                            <span class="lang-content-inline" data-lang="hi">4 का सेट</span>
+                            <span class="lang-content-inline" data-lang="mr">४ चा संच</span>
+                        </span>
+                        <span class="font-headline-sm text-headline-sm text-primary">₹40</span>
+                    </div>
+                </div>
+                <!-- Menu Item 3 -->
+                <div
+                    class="sketch-border p-stack-md lg:p-10 bg-surface flex flex-col gap-unit relative md:col-span-2 lg:col-span-1 group hover:-translate-y-1 transition-transform duration-300 min-h-[200px] lg:min-h-[260px]">
+                    <div
+                        class="absolute top-2 right-2 text-outline opacity-30 group-hover:opacity-100 transition-opacity">
+                        <span class="material-symbols-outlined">set_meal</span>
+                    </div>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface">
+                        <span class="lang-content-inline active" data-lang="en">Messy Special Sabzi</span>
+                        <span class="lang-content-inline" data-lang="kn">ಮೆಸ್ಸಿ ವಿಶೇಷ ಸಬ್ಜಿ</span>
+                        <span class="lang-content-inline" data-lang="hi">गन्दी विशेष सब्जी</span>
+                        <span class="lang-content-inline" data-lang="mr">गोंधळलेला विशेष भाजी</span>
+                    </h3>
+                    <p class="font-body-md text-on-surface-variant flex-grow">
+                        <span class="lang-content-inline active" data-lang="en">Seasonal vegetables tossed in a rustic,
+                            hand-ground spice mix.</span>
+                        <span class="lang-content-inline" data-lang="kn">ಹಳ್ಳಿಗಾಡಿನ, ಕೈಯಿಂದ ರುಬ್ಬಿದ ಮಸಾಲೆ ಮಿಶ್ರಣದಲ್ಲಿ
+                            ಕಾಲೋಚಿತ ತರಕಾರಿಗಳನ್ನು ಎಸೆಯಲಾಗುತ್ತದೆ.</span>
+                        <span class="lang-content-inline" data-lang="hi">मौसमी सब्जियों को देहाती, हाथ से पिसे मसाला
+                            मिश्रण में मिलाया जाता है।</span>
+                        <span class="lang-content-inline" data-lang="mr">हंगामी भाज्या एका अडाणी, हाताने बारीक केलेल्या
+                            मसाल्याच्या मिश्रणात फेकल्या जातात.</span>
+                    </p>
+                    <div class="pencil-line my-2 w-full"></div>
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="font-label-caps text-label-caps text-secondary">
+                            <span class="lang-content-inline active" data-lang="en">Chef's mood</span>
+                            <span class="lang-content-inline" data-lang="kn">ಬಾಣಸಿಗನ ಮನಸ್ಥಿತಿ</span>
+                            <span class="lang-content-inline" data-lang="hi">शेफ का मूड</span>
+                            <span class="lang-content-inline" data-lang="mr">शेफचा मूड</span>
+                        </span>
+                        <span class="font-headline-sm text-headline-sm text-primary">₹150</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 text-center pb-8">
+                <a class="inline-flex items-center gap-2 font-headline-sm text-headline-sm text-primary hover:text-primary-container border-b-2 border-transparent hover:border-primary-container transition-all pb-1"
+                    href="menu.html">
+                    <span class="lang-content-inline active" data-lang="en">See Full Menu</span>
+                    <span class="lang-content-inline" data-lang="kn">ಪೂರ್ಣ ಮೆನು ನೋಡಿ</span>
+                    <span class="lang-content-inline" data-lang="hi">पूरा मेनू देखें</span>
+                    <span class="lang-content-inline" data-lang="mr">संपूर्ण मेनू पहा</span>
+                    <span class="material-symbols-outlined text-sm">east</span>
+                </a>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full py-stack-md bg-surface-container-highest border-t-2 border-outline flat no shadows mt-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center px-5 md:px-8 lg:px-16 gap-stack-sm w-full">
+            <!-- Brand Logo -->
+            <div class="font-headline-sm text-headline-sm text-on-surface"><img alt="Authana Logo"
+                    class="site-logo h-10 w-auto object-contain"
+                    src="https://lh3.googleusercontent.com/aida/AP1WRLuZtSbXAFyM-zUJ4V7u5c4tleOcC6ECBFDl_Iac_Koqut2YTJjPU48WMXLDu0bN4nmSmvh8DewUt1RIgGYuJDhuSFHyGcTn_HcRNvt9PEmlJF7LehJn07XzRO1-zCdXAO08GElRR_MXM28h1_fe6TIJN2jI362fasHN1zi6_0qQpvsbN5yOntUw8W5RJmuAazshykDMW9JSidUDKw9UjJWSkng7NDI4AqfLHOMnGg8jhwCsxSbDoQmYGKYy" />
+            </div>
+            <!-- Copyright -->
+            <div class="font-label-caps text-on-secondary-fixed-variant opacity-70 text-center md:text-right"
+                style="font-size: 14px;">
                 © 2024 MessyKitchen - Handcrafted with care.
             </div>
-</div>
-</footer>
-<!-- SVG Filters for rough edges -->
-<svg aria-hidden="true" focusable="false" style="width:0;height:0;position:absolute;">
-<defs>
-<filter id="rough-edge">
-<feturbulence basefrequency="0.05" numoctaves="3" result="noise" type="fractalNoise"></feturbulence>
-<fedisplacementmap in="SourceGraphic" in2="noise" scale="3" xchannelselector="R" ychannelselector="G"></fedisplacementmap>
-</filter>
-</defs>
-</svg>
-<!-- Simple interaction script -->
-<script>
+        </div>
+    </footer>
+    <!-- SVG Filters for rough edges -->
+    <svg aria-hidden="true" focusable="false" style="width:0;height:0;position:absolute;">
+        <defs>
+            <filter id="rough-edge">
+                <feturbulence basefrequency="0.05" numoctaves="3" result="noise" type="fractalNoise"></feturbulence>
+                <fedisplacementmap in="SourceGraphic" in2="noise" scale="3" xchannelselector="R" ychannelselector="G">
+                </fedisplacementmap>
+            </filter>
+        </defs>
+    </svg>
+    
+    <!-- Simple interaction script -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileDrawer = document.getElementById('mobile-drawer');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+        const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+
+        function openOrderModal(itemName) {
+            console.log("tesssssssst");
+            
+            const redirectBtn = document.getElementById('whatsapp-redirect-btn');
+            let targetWhatsAppUrl = 'https://wa.me/918310786409?text=Hi%20Authana%20Belagavi!%20I%20would%20like%20to%20order%20food.';
+            if (itemName) {
+                targetWhatsAppUrl = `https://wa.me/918310786409?text=Hi%20Authana%20Belagavi!%20I%20would%20like%20to%20order%20${encodeURIComponent(itemName)}%20(%E2%82%B969).`;
+            }
+            if (redirectBtn) {
+                redirectBtn.href = targetWhatsAppUrl;
+            }
+            const modal = document.getElementById('whatsapp-warning-modal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function openMobileMenu() {
+            mobileDrawer.classList.remove('hidden');
+            mobileDrawer.classList.add('flex');
+            mobileMenuIcon.textContent = 'close';
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileDrawer.classList.add('hidden');
+            mobileDrawer.classList.remove('flex');
+            mobileMenuIcon.textContent = 'menu';
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileDrawer.classList.contains('hidden') ? openMobileMenu() : closeMobileMenu();
+        });
+        mobileOverlay.addEventListener('click', closeMobileMenu);
+
         // Shrink nav on scroll
         const nav = document.getElementById('main-nav');
+        // Scroll-progress bar
+        const progressBar = document.createElement('div');
+        progressBar.style.cssText = 'position:fixed;top:0;left:0;height:3px;background:#a33818;z-index:100;width:0%;transition:width 0.1s linear;pointer-events:none;';
+        document.body.appendChild(progressBar);
         window.addEventListener('scroll', () => {
+            const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+            progressBar.style.width = Math.min(pct, 100) + '%';
             if (window.scrollY > 50) {
                 nav.classList.add('shadow-sm', 'py-unit');
                 nav.classList.remove('py-stack-sm');
@@ -428,7 +663,7 @@
             hi: 'https://lh3.googleusercontent.com/aida/AP1WRLtY3YlvLkNN4G-SnNTgXf6oIzG_vGmFinPuNYn65oULR8Bi-jWYeaW1KSFWV4aGtWMlZ_9uqzeawIWsAnPd_eg_PXIsWH-dYhMh2cJvHEecKbOuVE-o8V_yPyoCN3XQYgul8pYbMqzRqtpc0ucGkevf_wvJ_IRraWDXyf15jmZQgsQ-7krP48kYLi1rbNHq05bcWSDnqTdXHpBJ1aeOCN_LcYK_GONFAdkaGQBuCoGsFxf0M0VHNrbRc1YH',
             mr: 'https://lh3.googleusercontent.com/aida/AP1WRLuVZkUU_b7047yiOxJ3T0NlNaQ8de3En2IshY_HzHNq40GYAbnUgqlt8_Y-GbORGuFO6W-IAuyM9_1Sd6iWM8Op-pI5KlXvg2oQ8JLIVzuX0VHBwiubH7hVuwuFOdJSc5R7KrDUmnOaSmp2g8JAtrFurAzhku4QcW5kluy90pygUHu73jnBqZ9vuTb_vfvSgIph83U5cYwNMFSdeNzcP6MR_MWhLJZEjOVzS1mq2jdAmCbYE3-ryPKPy6_o'
         };
-        
+
         const switchers = document.querySelectorAll('.language-switcher');
         const siteLogos = document.querySelectorAll('.site-logo');
         const langContents = document.querySelectorAll('.lang-content, .lang-content-inline, .lang-content-inline-block');
@@ -436,7 +671,7 @@
         function setLanguage(lang) {
             // Update all switchers
             switchers.forEach(s => s.value = lang);
-            
+
             // Update logos
             siteLogos.forEach(logo => logo.src = logos[lang]);
 
@@ -449,8 +684,8 @@
                 }
             });
 
-            // Save preference
-            localStorage.setItem('preferredLanguage', lang);
+            // Save preference — shared key, uppercase so all pages agree
+            localStorage.setItem('mkLang', lang.toUpperCase());
         }
 
         switchers.forEach(switcher => {
@@ -459,9 +694,17 @@
             });
         });
 
-        // Init language from local storage or default to 'en'
-        const savedLang = localStorage.getItem('preferredLanguage') || 'en';
-        setLanguage(savedLang);
+        // Init language from shared key — normalise to lowercase for index.html
+        const _raw = (localStorage.getItem('mkLang')
+            || localStorage.getItem('selectedLang')
+            || localStorage.getItem('preferredLanguage')
+            || localStorage.getItem('messyKitchenLang')
+            || 'en').toLowerCase();
+        // Ensure the select shows the correct option before first paint
+        document.querySelectorAll('.language-switcher').forEach(s => s.value = _raw);
+        setLanguage(_raw);
 
     </script>
-</body></html>
+</body>
+
+</html>

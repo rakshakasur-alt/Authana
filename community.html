@@ -1,19 +1,15 @@
 <!DOCTYPE html>
-
-<html class="light" lang="en" style=""><head>
+<html class="light" lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Community | MessyKitchen</title>
-<!-- Material Symbols -->
+<title>Belagavi Community &amp; Home Cooks — Authana</title>
+<meta name="description" content="Learn about Authana's Belagavi community of home cooks, local sourcing, FAQs, operating hours (6-10 PM), and delivery neighborhoods." />
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;700;800&amp;family=JetBrains+Mono:wght@500&amp;family=Work+Sans:wght@400&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Tailwind Configuration -->
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -48,25 +44,25 @@
                     "outline": "#8b716a",
                     "surface-container-lowest": "#ffffff",
                     "surface-variant": "#e3e2e0",
-                    "surface-container": "#efeeec",
                     "surface-container-high": "#e9e8e6",
-                    "surface-container-highest": "#e3e2e0",
-                    "primary-fixed": "#ffdbd1",
                     "on-tertiary-fixed-variant": "#004e5d",
-                    "surface-dim": "#dadad8",
+                    "tertiary-container": "#008098",
+                    "tertiary-fixed": "#afecff",
                     "on-primary-container": "#fffbff",
-                    "error-container": "#ffdad6",
-                    "on-tertiary-container": "#f9fdff",
-                    "on-secondary-container": "#656464",
                     "on-surface": "#1a1c1b",
+                    "on-tertiary-container": "#f9fdff",
                     "background": "#faf9f7",
-                    "surface-container-low": "#f4f3f1",
+                    "surface-container": "#efeeec",
+                    "primary-fixed": "#ffdbd1",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-highest": "#e3e2e0",
+                    "on-primary-fixed": "#3b0900",
+                    "surface-dim": "#dadad8",
                     "surface": "#faf9f7",
                     "primary": "#a33818",
-                    "tertiary-fixed": "#afecff",
-                    "tertiary-container": "#008098",
-                    "on-tertiary": "#ffffff",
-                    "on-primary-fixed": "#3b0900"
+                    "on-secondary-container": "#656464",
+                    "surface-container-low": "#f4f3f1"
             },
             "borderRadius": {
                     "DEFAULT": "0.125rem",
@@ -75,99 +71,131 @@
                     "full": "0.75rem"
             },
             "spacing": {
-                    "margin-mobile": "20px",
-                    "stack-sm": "12px",
                     "gutter": "24px",
+                    "unit": "8px",
                     "stack-lg": "64px",
                     "stack-md": "32px",
-                    "unit": "8px",
-                    "margin-desktop": "64px"
+                    "margin-desktop": "64px",
+                    "margin-mobile": "20px",
+                    "stack-sm": "12px"
             },
             "fontFamily": {
-                    "body-lg": ["Work Sans"],
-                    "display-lg": ["Bricolage Grotesque"],
-                    "headline-sm": ["Bricolage Grotesque"],
-                    "body-md": ["Work Sans"],
-                    "headline-md": ["Bricolage Grotesque"],
-                    "label-caps": ["JetBrains Mono"]
+                    "body-lg": [ "Work Sans" ],
+                    "display-lg": [ "Bricolage Grotesque" ],
+                    "label-caps": [ "JetBrains Mono" ],
+                    "headline-md": [ "Bricolage Grotesque" ],
+                    "body-md": [ "Work Sans" ],
+                    "headline-sm": [ "Bricolage Grotesque" ]
             },
             "fontSize": {
-                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
-                    "headline-sm": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
-                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
-                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}]
+                    "body-lg": [ "18px", { "lineHeight": "1.6", "fontWeight": "400" } ],
+                    "display-lg": [ "48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" } ],
+                    "label-caps": [ "12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500" } ],
+                    "headline-md": [ "32px", { "lineHeight": "1.2", "fontWeight": "700" } ],
+                    "body-md": [ "16px", { "lineHeight": "1.6", "fontWeight": "400" } ],
+                    "headline-sm": [ "24px", { "lineHeight": "1.2", "fontWeight": "600" } ]
             }
-          }
-        }
+        },
+        },
       }
     </script>
 <style>
-        /* Custom Styles for Artisanal Sketch Feel */
         body {
-            background-color: #faf9f7;
-            /* Subtle paper texture using CSS radial gradient */
-            background-image: radial-gradient(#e3e2e0 1px, transparent 1px);
+            background-color: theme('colors.background');
+            background-image: linear-gradient(theme('colors.surface-variant') 1px, transparent 1px), linear-gradient(90deg, theme('colors.surface-variant') 1px, transparent 1px);
             background-size: 20px 20px;
+            background-position: center center;
         }
-        
+
         .sketch-border {
-            border: 2px solid #1a1c1b;
-            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            border: 2px solid theme('colors.on-background');
+            box-shadow: 3px 3px 0px theme('colors.on-background');
+            position: relative;
         }
-        
+
         .sketch-border-bottom {
-            border-bottom: 2px solid #1a1c1b;
-            border-radius: 0 0 10px 255px/0 0 15px 15px;
+            border-bottom: 2px solid theme('colors.on-background');
         }
-        
-        .double-stroke-shadow {
-            box-shadow: 4px 4px 0px 0px rgba(26,28,27,0.1);
-        }
-        
+
         .scribble-bg {
-            background-image: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(163, 56, 24, 0.05) 4px, rgba(163, 56, 24, 0.05) 5px);
+            background-image: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                theme('colors.surface-variant') 10px,
+                theme('colors.surface-variant') 12px
+            );
         }
-        
+
+        .double-stroke-shadow {
+            position: relative;
+        }
+        .double-stroke-shadow::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: -4px;
+            bottom: -4px;
+            border: 1.5px solid theme('colors.on-background');
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .wiggle-hover {
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
         .wiggle-hover:hover {
-            transform: scale(1.02) rotate(-1deg);
+            transform: scale(1.02) rotate(1deg);
         }
-        
-        /* Input overrides for sketch style */
-        input[type="text"], input[type="email"], textarea {
-            border: none;
-            border-bottom: 2px solid #1a1c1b;
-            background: transparent;
-            border-radius: 0;
-            padding-left: 0;
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            opacity: 0;
         }
-        input:focus, textarea:focus {
-            outline: none;
-            box-shadow: none;
-            border-color: #a33818;
+        .faq-answer.open {
+            max-height: 250px;
+            opacity: 1;
+            transition: max-height 0.3s ease-in, opacity 0.3s ease-in;
         }
-        
-        /* Custom cursor to match stroke */
-        input, textarea {
-            caret-color: #1a1c1b;
+
+        #toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 100;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+        }
+        #toast.show {
+            transform: translateY(0);
+            opacity: 1;
         }
     </style>
 </head>
-<body class="font-body-md text-on-background antialiased min-h-screen flex flex-col">
+<body class="font-body-md text-body-md text-on-background antialiased flex flex-col min-h-screen">
 <!-- TopNavBar -->
-<header class="bg-background w-full top-0 sticky border-b-2 border-secondary z-50 flat no shadows">
-<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-7xl mx-auto">
-<a href="index.html" class="h-12 w-auto flex items-center"><img alt="Authana Logo" class="h-full w-auto object-contain" id="header-logo" src="https://lh3.googleusercontent.com/aida/AP1WRLuZtSbXAFyM-zUJ4V7u5c4tleOcC6ECBFDl_Iac_Koqut2YTJjPU48WMXLDu0bN4nmSmvh8DewUt1RIgGYuJDhuSFHyGcTn_HcRNvt9PEmlJF7LehJn07XzRO1-zCdXAO08GElRR_MXM28h1_fe6TIJN2jI362fasHN1zi6_0qQpvsbN5yOntUw8W5RJmuAazshykDMW9JSidUDKw9UjJWSkng7NDI4AqfLHOMnGg8jhwCsxSbDoQmYGKYy"/></a>
-<nav class="hidden md:flex gap-gutter items-center">
-<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors hover:bg-surface-variant/10 transition-all duration-200 px-3 py-2 sketch-border border-transparent hover:border-secondary/20" data-i18n="nav_story" href="index.html">Our Story</a>
-<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors hover:bg-surface-variant/10 transition-all duration-200 px-3 py-2 sketch-border border-transparent hover:border-secondary/20" data-i18n="nav_menu" href="menu.html">The Menu</a>
-<a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1 font-bold" data-i18n="nav_community" href="community.html">Community</a>
+<header class="w-full top-0 sticky bg-surface border-b-2 border-on-background z-40">
+<div class="flex justify-between items-center px-5 md:px-8 lg:px-16 py-stack-sm w-full">
+<!-- Brand Logo -->
+<a class="font-headline-md text-headline-md text-primary flex items-center gap-2 wiggle-hover" href="index.html">
+<img alt="Authana Logo" class="site-logo h-12 w-auto object-contain" id="header-logo" src="https://lh3.googleusercontent.com/aida/AP1WRLuZtSbXAFyM-zUJ4V7u5c4tleOcC6ECBFDl_Iac_Koqut2YTJjPU48WMXLDu0bN4nmSmvh8DewUt1RIgGYuJDhuSFHyGcTn_HcRNvt9PEmlJF7LehJn07XzRO1-zCdXAO08GElRR_MXM28h1_fe6TIJN2jI362fasHN1zi6_0qQpvsbN5yOntUw8W5RJmuAazshykDMW9JSidUDKw9UjJWSkng7NDI4AqfLHOMnGg8jhwCsxSbDoQmYGKYy"/>
+</a>
+<!-- Navigation Links (Web) -->
+<nav class="hidden md:flex gap-stack-md items-center">
+<a class="font-body-lg text-body-lg text-secondary hover:text-primary transition-colors hover:rotate-1" href="index.html#story">Our Story</a>
+<a class="font-body-lg text-body-lg text-secondary hover:text-primary transition-colors hover:rotate-1" href="menu.html">The Menu</a>
+<a class="font-body-lg text-body-lg text-primary font-bold border-b-2 border-primary pb-1 hover:rotate-1" href="community.html">Community</a>
 </nav>
+<!-- Trailing Actions -->
 <div class="hidden md:flex items-center gap-4">
-<button class="font-body-md text-body-md text-on-primary bg-primary px-6 py-2 sketch-border wiggle-hover transition-transform active:scale-[0.98]" data-i18n="nav_try">
-        Try Food
-    </button>
+<button onclick="openOrderModal()" class="font-body-md text-body-md text-on-primary bg-primary px-6 py-2 sketch-border wiggle-hover transition-transform active:scale-[0.98] flex items-center gap-2 cursor-pointer">
+<span class="material-symbols-outlined" style="font-size:18px;">shopping_bag</span>
+Order Food
+</button>
 <select class="bg-surface font-body-md text-on-background py-1 px-2 sketch-border cursor-pointer focus:outline-none focus:border-primary" id="lang-switch-header" onchange="changeLanguage(this.value)">
 <option value="EN">EN</option>
 <option value="KN">KN</option>
@@ -175,33 +203,70 @@
 <option value="MR">MR</option>
 </select>
 </div>
-<!-- Mobile Menu Icon (Placeholder for functionality) -->
-<button class="md:hidden text-on-background">
-<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 0;'>menu</span>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden text-on-background" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
+<span class="material-symbols-outlined" id="mobile-menu-icon" style='font-variation-settings: "FILL" 0;'>menu</span>
 </button>
 </div>
 </header>
+
+<!-- Mobile Drawer -->
+<div class="hidden fixed inset-0 z-50 md:hidden" id="mobile-drawer">
+<div class="absolute inset-0 bg-on-surface/30" id="mobile-overlay"></div>
+<nav class="absolute top-0 right-0 h-full w-72 bg-surface border-l-2 border-on-background flex flex-col pt-20 px-6 gap-4 shadow-xl z-50">
+<a class="font-body-lg text-body-lg text-secondary hover:text-primary transition-colors" href="index.html#story" onclick="closeMobileMenu()" data-i18n-mob="nav_story">Our Story</a>
+<a class="font-body-lg text-body-lg text-secondary hover:text-primary transition-colors" href="menu.html" data-i18n-mob="nav_menu">The Menu</a>
+<a class="font-body-lg text-body-lg text-primary font-bold border-b-2 border-primary pb-1 w-max" href="community.html" data-i18n-mob="nav_community">Community</a>
+<div class="mt-4 pt-4 border-t border-on-background/20 flex flex-col gap-4">
+<button onclick="closeMobileMenu(); openOrderModal();" class="font-body-md text-body-md text-on-primary bg-primary px-6 py-3 sketch-border wiggle-hover transition-transform active:scale-[0.98] w-full flex items-center justify-center gap-2 cursor-pointer" data-i18n-mob="nav_try">Order Food</button>
+<select class="bg-surface font-body-md text-on-background py-2 px-3 sketch-border cursor-pointer focus:outline-none focus:border-primary w-full" id="lang-switch-mobile" onchange="changeLanguage(this.value)">
+<option value="EN">EN</option>
+<option value="KN">KN</option>
+<option value="HI">HI</option>
+<option value="MR">MR</option>
+</select>
+</div>
+</nav>
+</div>
+
+<!-- Delivery hours & location banner -->
+<div class="w-full bg-surface-container border-b border-outline/40 px-5 md:px-8 lg:px-16 py-2 flex flex-wrap items-center justify-between gap-2">
+  <div class="flex items-center gap-2 text-secondary" style="font-size:13px; font-family:'JetBrains Mono',monospace;">
+    <span class="material-symbols-outlined" style="font-size:16px; color:#a33818;">schedule</span>
+    <span>Working: <strong class="text-on-surface">6 PM – 10 PM</strong> · Slots: <strong class="text-on-surface">8 PM</strong> (by 7:30) &amp; <strong class="text-on-surface">10 PM</strong> (by 9:30) · Express +₹20 (30 min)</span>
+  </div>
+  <div class="flex items-center gap-2 text-secondary" style="font-size:13px; font-family:'JetBrains Mono',monospace;">
+    <span class="material-symbols-outlined" style="font-size:16px; color:#a33818;">location_on</span>
+    <span>Serving <strong class="text-on-surface">Belagavi</strong> (Tilakwadi, Shahapur, Angol, Vadgaon &amp; 10 more areas)</span>
+  </div>
+</div>
+
 <!-- Main Content Canvas -->
-<main class="flex-grow w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col gap-stack-lg">
+<main class="flex-grow w-full px-5 md:px-8 lg:px-16 py-stack-lg flex flex-col gap-stack-lg">
 <!-- Hero/Milestones Area -->
 <section class="flex flex-col md:flex-row gap-gutter justify-center items-stretch mt-stack-md relative">
 <!-- Decorative scribble behind -->
 <div class="absolute inset-0 scribble-bg -z-10 opacity-50 sketch-border hidden md:block"></div>
 <div class="flex-1 bg-surface p-stack-md lg:p-stack-lg sketch-border double-stroke-shadow flex flex-col items-center justify-center text-center wiggle-hover transition-transform duration-300 min-h-[200px] lg:min-h-[240px]">
 <span class="material-symbols-outlined text-display-lg text-primary mb-4" style='font-variation-settings: "FILL" 0;'>calendar_month</span>
-<h2 class="font-headline-md text-headline-md mb-2" data-i18n="stats_1_title">1 Month</h2>
-<p class="font-body-lg text-body-lg text-secondary" data-i18n="stats_1_desc">Since We Started the Mess</p>
+<h2 class="font-headline-md text-headline-md mb-2" data-i18n="stats_1_title">Belagavi Mess</h2>
+<p class="font-body-lg text-body-lg text-secondary" data-i18n="stats_1_desc">Serving Home-Cooked Food Daily</p>
 <div class="mt-4 w-16 h-1 bg-primary/20 sketch-border-bottom"></div>
 </div>
 <div class="flex-1 bg-surface p-stack-md lg:p-stack-lg sketch-border double-stroke-shadow flex flex-col items-center justify-center text-center wiggle-hover transition-transform duration-300 min-h-[200px] lg:min-h-[240px]">
 <span class="material-symbols-outlined text-display-lg text-primary mb-4" style='font-variation-settings: "FILL" 0;'>group</span>
-<h2 class="font-headline-md text-headline-md mb-2" data-i18n="stats_2_title">50+</h2>
-<p class="font-body-lg text-body-lg text-secondary" data-i18n="stats_2_desc">Happy Tiffin Eaters</p>
+<h2 class="font-headline-md text-headline-md mb-2" data-i18n="stats_2_title">500+</h2>
+<p class="font-body-lg text-body-lg text-secondary" data-i18n="stats_2_desc">Happy Belagavi Tiffin Eaters</p>
 <div class="mt-4 w-16 h-1 bg-primary/20 sketch-border-bottom"></div>
 </div>
 </section>
-<!-- FAQ Section -->
+
+<!-- FAQ + Thali Side View -->
 <section class="mt-stack-lg">
+<div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+
+<!-- FAQ column -->
+<div class="flex-1 min-w-0">
 <div class="mb-stack-md relative inline-block">
 <h2 class="font-display-lg text-display-lg text-primary" data-i18n="faq_title">Curious?</h2>
 <!-- Hand-drawn underline effect -->
@@ -209,110 +274,309 @@
 <path d="M0 5 Q 25 0, 50 5 T 100 5" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke"></path>
 </svg>
 </div>
-<div class="flex flex-col gap-unit max-w-3xl lg:max-w-4xl">
+<div class="flex flex-col gap-unit w-full max-w-4xl">
 <!-- FAQ Item 1 -->
-<div class="bg-surface p-stack-sm sketch-border double-stroke-shadow mb-stack-sm hover:bg-surface-container-low transition-colors group cursor-pointer">
+<div class="faq-item bg-surface p-stack-sm sketch-border double-stroke-shadow mb-stack-sm hover:bg-surface-container-low transition-colors cursor-pointer" data-faq="1">
 <div class="flex justify-between items-center">
-<h3 class="font-headline-sm text-headline-sm" data-i18n="faq_1_q">Why is it "Messy"?</h3>
-<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors">arrow_drop_down</span>
+<h3 class="font-headline-sm text-headline-sm" data-i18n="faq_1_q">Why is everything ₹69?</h3>
+<span class="faq-icon material-symbols-outlined text-secondary transition-transform duration-200">arrow_drop_down</span>
 </div>
-<p class="font-body-md text-body-md text-on-surface-variant mt-2 hidden group-hover:block pl-unit border-l-2 border-secondary/30 ml-1" data-i18n="faq_1_a">We believe real food isn't perfectly styled. It's cooked with heart, splashed on the stove, and tastes like index. The "mess" is the process of genuine cooking, not a factory assembly line.</p>
+<p class="faq-answer font-body-md text-body-md text-on-surface-variant mt-2 pl-unit border-l-2 border-secondary/30 ml-1" data-i18n="faq_1_a">We believe honest home food should be affordable for everyone in Belagavi. By cooking in batch thalis using seasonal local ingredients, we keep costs fair and transparent — strictly ₹69 for every dish.</p>
 </div>
 <!-- FAQ Item 2 -->
-<div class="bg-surface p-stack-sm sketch-border double-stroke-shadow mb-stack-sm hover:bg-surface-container-low transition-colors group cursor-pointer">
+<div class="faq-item bg-surface p-stack-sm sketch-border double-stroke-shadow mb-stack-sm hover:bg-surface-container-low transition-colors cursor-pointer" data-faq="2">
 <div class="flex justify-between items-center">
-<h3 class="font-headline-sm text-headline-sm" data-i18n="faq_2_q">Where do you deliver?</h3>
-<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors">arrow_drop_down</span>
+<h3 class="font-headline-sm text-headline-sm" data-i18n="faq_2_q">Where do you deliver in Belagavi?</h3>
+<span class="faq-icon material-symbols-outlined text-secondary transition-transform duration-200">arrow_drop_down</span>
 </div>
-<p class="font-body-md text-body-md text-on-surface-variant mt-2 hidden group-hover:block pl-unit border-l-2 border-secondary/30 ml-1" data-i18n="faq_2_a">Currently, we are keeping our radius tight to ensure the food stays hot and fresh. We serve the downtown core and university district. Check the menu page for exact boundaries.</p>
+<p class="faq-answer font-body-md text-body-md text-on-surface-variant mt-2 pl-unit border-l-2 border-secondary/30 ml-1" data-i18n="faq_2_a">We deliver across Majagaon, Udyambag, Piranwadi, Angol, Mahaveer Nagar, Brahma Nagar, Tilakwadi, Bhagya Nagar, Vadgaon, Shahapur, Rani Chennamma Nagar, Machhe, Khasbag, and Chidambar Nagar.</p>
 </div>
 <!-- FAQ Item 3 -->
-<div class="bg-surface p-stack-sm sketch-border double-stroke-shadow mb-stack-sm hover:bg-surface-container-low transition-colors group cursor-pointer">
+<div class="faq-item bg-surface p-stack-sm sketch-border double-stroke-shadow mb-stack-sm hover:bg-surface-container-low transition-colors cursor-pointer" data-faq="3">
 <div class="flex justify-between items-center">
-<h3 class="font-headline-sm text-headline-sm" data-i18n="faq_3_q">Can I request modifications?</h3>
-<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors">arrow_drop_down</span>
+<h3 class="font-headline-sm text-headline-sm" data-i18n="faq_3_q">What are your delivery times?</h3>
+<span class="faq-icon material-symbols-outlined text-secondary transition-transform duration-200">arrow_drop_down</span>
 </div>
-<p class="font-body-md text-body-md text-on-surface-variant mt-2 hidden group-hover:block pl-unit border-l-2 border-secondary/30 ml-1" data-i18n="faq_3_a">Our menu is fixed daily based on what's fresh at the market. However, we always offer a vegetarian alternative. We cannot accommodate complex allergies due to our shared kitchen space.</p>
+<p class="faq-answer font-body-md text-body-md text-on-surface-variant mt-2 pl-unit border-l-2 border-secondary/30 ml-1" data-i18n="faq_3_a">Our kitchen operates from 6 PM to 10 PM. We offer 8:00 PM delivery (order by 7:30 PM) and 10:00 PM delivery (order by 9:30 PM). Express Delivery (+₹20) arrives within 30 minutes of ordering.</p>
 </div>
+</div>
+</div>
+
+<!-- Thali side view image -->
+<div class="hidden lg:flex lg:w-[380px] xl:w-[440px] flex-shrink-0 items-center justify-center self-center">
+<div class="relative">
+<img
+  src="./stitch_minimalist_sketch_mess/an_artisanal_hand_drawn_charcoal_and_graphite_sketch_of_a_traditional_indian/thali side view.png"
+  alt="Hand-drawn sketch of a traditional Indian thali, side view"
+  class="w-full h-auto object-contain"
+  style="transform: rotate(-2deg); filter: drop-shadow(4px 4px 0px rgba(26,28,27,0.15));"
+/>
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-surface-container-low px-3 py-0.5 sketch-border transform rotate-1 whitespace-nowrap">
+  <span class="font-label-caps text-label-caps text-secondary" style="font-size:11px;" data-i18n="thali_label">Belagavi Special Thali ₹69</span>
+</div>
+</div>
+</div>
+
 </div>
 </section>
+
 <!-- Contact Form Section -->
-<section class="mt-stack-lg max-w-2xl lg:max-w-3xl w-full">
+<section class="mt-stack-lg w-full max-w-3xl">
 <div class="mb-stack-md">
 <h2 class="font-display-lg text-headline-md inline-block relative">
 <span data-i18n="contact_title">Drop a Note</span>
 <div class="absolute -z-10 bottom-1 left-0 w-full h-3 bg-secondary/10 -rotate-2"></div>
 </h2>
-<p class="font-body-md text-body-md text-secondary mt-2" data-i18n="contact_desc">Questions? Feedback? Just want to say hi?</p>
+<p class="font-body-md text-body-md text-secondary mt-2" data-i18n="contact_desc">Questions? Feedback? Want to join our Belagavi home-cook network?</p>
 </div>
 <form class="flex flex-col gap-stack-sm bg-surface p-stack-md sketch-border double-stroke-shadow relative">
-<!-- Decorative element -->
 <div class="absolute top-4 right-4 text-secondary/30">
 <span class="material-symbols-outlined" style='font-variation-settings: "FILL" 0; font-size: 48px;'>edit</span>
 </div>
 <div class="flex flex-col">
 <label class="font-label-caps text-label-caps text-secondary mb-1" data-i18n="contact_name" for="name">Name</label>
-<input class="font-body-lg text-body-lg py-2 focus:border-primary transition-colors" data-i18n-ph="contact_name_ph" id="name" name="name" placeholder="Your Name" type="text"/>
+<input class="font-body-lg text-body-lg py-2 focus:border-primary transition-colors border-b border-outline bg-transparent" data-i18n-ph="contact_name_ph" id="name" name="name" placeholder="Your Name" type="text"/>
 </div>
 <div class="flex flex-col">
-<label class="font-label-caps text-label-caps text-secondary mb-1" data-i18n="contact_email" for="email">Email</label>
-<input class="font-body-lg text-body-lg py-2 focus:border-primary transition-colors" data-i18n-ph="contact_email_ph" id="email" name="email" placeholder="your@email.com" type="email"/>
+<label class="font-label-caps text-label-caps text-secondary mb-1" data-i18n="contact_email" for="email">Email / Phone</label>
+<input class="font-body-lg text-body-lg py-2 focus:border-primary transition-colors border-b border-outline bg-transparent" data-i18n-ph="contact_email_ph" id="email" name="email" placeholder="your@email.com or phone" type="text"/>
 </div>
 <div class="flex flex-col">
 <label class="font-label-caps text-label-caps text-secondary mb-1" data-i18n="contact_msg" for="message">Message</label>
-<textarea class="font-body-lg text-body-lg py-2 focus:border-primary transition-colors resize-none" data-i18n-ph="contact_msg_ph" id="message" name="message" placeholder="What's on your mind?" rows="4"></textarea>
+<textarea class="font-body-lg text-body-lg py-2 focus:border-primary transition-colors border-b border-outline bg-transparent resize-none" data-i18n-ph="contact_msg_ph" id="message" name="message" placeholder="What's on your mind?" rows="4"></textarea>
 </div>
-<button class="mt-4 self-start font-body-md text-body-md text-on-primary bg-primary px-8 py-3 sketch-border wiggle-hover transition-transform active:scale-[0.98] flex items-center gap-2" type="submit">
+<button class="mt-4 self-start font-body-md text-body-md text-on-primary bg-primary px-8 py-3 sketch-border wiggle-hover transition-transform active:scale-[0.98] flex items-center gap-2 cursor-pointer" type="submit">
 <span data-i18n="contact_btn">Send Note</span>
 <span class="material-symbols-outlined text-sm" style='font-variation-settings: "FILL" 0;'>send</span>
 </button>
 </form>
 </section>
+
 <!-- Prominent CTA -->
 <section class="mt-stack-lg mb-stack-lg flex justify-center text-center">
-<div class="relative inline-block">
-<button class="font-headline-sm text-headline-sm text-on-primary bg-primary px-12 py-6 sketch-border double-stroke-shadow wiggle-hover transition-transform active:scale-[0.98]" data-i18n="cta_btn">
-                    Try Food Now
-                </button>
-<!-- Hand-drawn arrow pointing to button -->
-<svg class="absolute -top-12 -right-16 w-24 h-24 text-secondary hidden md:block" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 100 100">
+<div class="relative md:pt-16 md:pr-24">
+<button onclick="openOrderModal()" class="font-headline-sm text-headline-sm text-on-primary bg-primary px-12 py-6 sketch-border double-stroke-shadow wiggle-hover transition-transform active:scale-[0.98] cursor-pointer flex items-center gap-3">
+<span class="material-symbols-outlined">shopping_bag</span> Order Food Now (₹69)
+</button>
+<svg class="absolute top-0 right-0 w-20 h-16 text-secondary hidden md:block" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 100 100">
 <path d="M10 10 Q 50 10, 80 50"></path>
 <path d="M60 50 L 80 50 L 70 30"></path>
 </svg>
-<span class="absolute -top-16 -right-20 font-label-caps text-label-caps text-secondary rotate-12 hidden md:block" data-i18n="cta_hint">It's good!</span>
+<span class="absolute top-1 right-2 font-label-caps text-label-caps text-secondary rotate-12 hidden md:block">Belagavi's Best!</span>
 </div>
 </section>
 </main>
-<!-- Footer -->
-<footer class="bg-surface-container w-full mt-auto border-t-2 border-secondary flat no shadows">
-<div class="flex flex-col items-center justify-center w-full px-margin-mobile md:px-margin-desktop py-stack-md max-w-7xl mx-auto gap-4">
-<div class="h-10 w-auto flex items-center"><img alt="Authana Logo" class="h-full w-auto object-contain" id="footer-logo" src="https://lh3.googleusercontent.com/aida/AP1WRLuZtSbXAFyM-zUJ4V7u5c4tleOcC6ECBFDl_Iac_Koqut2YTJjPU48WMXLDu0bN4nmSmvh8DewUt1RIgGYuJDhuSFHyGcTn_HcRNvt9PEmlJF7LehJn07XzRO1-zCdXAO08GElRR_MXM28h1_fe6TIJN2jI362fasHN1zi6_0qQpvsbN5yOntUw8W5RJmuAazshykDMW9JSidUDKw9UjJWSkng7NDI4AqfLHOMnGg8jhwCsxSbDoQmYGKYy"/></div>
-<div class="font-body-md text-body-md text-on-surface-variant">© 2024 MessyKitchen - Handcrafted with care.</div>
+
+<!-- Rich 4-Column Handcrafted Belagavi Footer -->
+<footer class="w-full py-12 bg-surface-container-highest border-t-2 border-outline z-10 mt-auto">
+<div class="px-5 md:px-8 lg:px-16 w-full max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-outline/30">
+
+<!-- Col 1: Brand & Location -->
+<div class="flex flex-col gap-3">
+<div class="font-headline-sm text-headline-sm text-on-surface">
+  <img alt="Authana Logo" class="site-logo h-10 w-auto object-contain" id="footer-logo" src="https://lh3.googleusercontent.com/aida/AP1WRLuZtSbXAFyM-zUJ4V7u5c4tleOcC6ECBFDl_Iac_Koqut2YTJjPU48WMXLDu0bN4nmSmvh8DewUt1RIgGYuJDhuSFHyGcTn_HcRNvt9PEmlJF7LehJn07XzRO1-zCdXAO08GElRR_MXM28h1_fe6TIJN2jI362fasHN1zi6_0qQpvsbN5yOntUw8W5RJmuAazshykDMW9JSidUDKw9UjJWSkng7NDI4AqfLHOMnGg8jhwCsxSbDoQmYGKYy"/>
+</div>
+<p class="font-body-md text-sm text-on-surface-variant">
+Good Food, No Fuss. Honest home-cooked thalis prepared fresh in Belagavi for students, workers &amp; families. Every dish is ₹69.
+</p>
+<div class="inline-flex items-center gap-1.5 text-xs font-label-caps text-primary bg-primary/10 sketch-border px-3 py-1.5 w-max">
+<span class="material-symbols-outlined" style="font-size:16px;">location_on</span>
+Belagavi, Karnataka
+</div>
+</div>
+
+<!-- Col 2: Navigation Links -->
+<div class="flex flex-col gap-3">
+<h4 class="font-label-caps text-label-caps uppercase text-primary font-bold tracking-wider">Quick Navigation</h4>
+<ul class="flex flex-col gap-2 text-sm font-body-md text-on-surface-variant">
+<li><a href="index.html#story" class="hover:text-primary transition-colors">Our Story</a></li>
+<li><a href="menu.html" class="hover:text-primary transition-colors">Today's Menu (All ₹69)</a></li>
+<li><a href="community.html" class="hover:text-primary transition-colors">Belagavi Community</a></li>
+<li><button onclick="openOrderModal()" class="hover:text-primary text-left cursor-pointer font-bold text-primary">Order Food (WhatsApp)</button></li>
+</ul>
+</div>
+
+<!-- Col 3: Hours & Delivery Slots -->
+<div class="flex flex-col gap-3">
+<h4 class="font-label-caps text-label-caps uppercase text-primary font-bold tracking-wider">Hours &amp; Delivery</h4>
+<div class="text-xs font-label-caps text-on-surface flex flex-col gap-1.5">
+<p><strong>Working Hours:</strong> 6:00 PM – 10:00 PM (Daily)</p>
+<p><strong>Slot 1 Delivery (8 PM):</strong> Order by 7:30 PM</p>
+<p><strong>Slot 2 Delivery (10 PM):</strong> Order by 9:30 PM</p>
+<p class="text-primary font-bold">Express Delivery (+₹20): Delivered within 30 min</p>
+</div>
+<p class="text-xs text-on-surface-variant mt-1 leading-snug">
+<strong>Coverage:</strong> Majagaon, Udyambag, Piranwadi, Angol, Mahaveer Nagar, Brahma Nagar, Tilakwadi, Bhagya Nagar, Vadgaon, Shahapur, Rani Chennamma Nagar, Machhe, Khasbag, Chidambar Nagar.
+</p>
+</div>
+
+<!-- Col 4: Contact & Order CTA -->
+<div class="flex flex-col gap-3">
+<h4 class="font-label-caps text-label-caps uppercase text-primary font-bold tracking-wider">Contact &amp; Order</h4>
+<p class="text-xs font-label-caps text-on-surface">Order directly via WhatsApp or phone:</p>
+<button onclick="openOrderModal()" class="sketch-border sketch-shadow bg-primary text-on-primary font-label-caps px-4 py-2.5 uppercase tracking-wider text-xs flex items-center justify-center gap-2 cursor-pointer">
+<span class="material-symbols-outlined" style="font-size:16px;">chat</span> Order on WhatsApp
+</button>
+<a href="tel:+91 8310786409" class="sketch-border bg-surface text-on-surface font-label-caps px-4 py-2.5 uppercase tracking-wider text-xs flex items-center justify-center gap-2 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" style="font-size:16px;">call</span> Call: +91 8310786409
+</a>
+<span class="text-xs text-on-surface-variant font-label-caps">Email: hello@authana.in</span>
+</div>
+
+</div>
+
+<div class="pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-label-caps text-on-secondary-fixed-variant opacity-80">
+<div>© 2024 Authana Belagavi — Handcrafted with care. All dishes ₹69.</div>
+<div class="flex gap-4">
+<span>Belagavi, Karnataka</span> · <span>WhatsApp Ordering</span>
+</div>
+</div>
 </div>
 </footer>
-<!-- Simple interaction script for FAQ and Language -->
+
+<!-- Toast notification -->
+<div id="toast" class="bg-surface sketch-border px-6 py-3 flex items-center gap-3 shadow-lg" role="status" aria-live="polite">
+<span class="material-symbols-outlined text-primary" style='font-variation-settings:"FILL" 1;'>check_circle</span>
+<span id="toast-msg" class="font-body-md text-body-md text-on-surface" style="font-size:15px;">Note sent!</span>
+</div>
+
+<!-- WHATSAPP REDIRECT WARNING MODAL -->
+<div id="whatsapp-warning-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-on-surface/50 backdrop-blur-sm p-4 overflow-y-auto">
+<div class="bg-surface sketch-border sketch-shadow w-full max-w-md p-6 relative rounded transform transition-all text-center">
+<button onclick="closeWhatsAppModal()" class="absolute top-4 right-4 text-on-surface hover:text-primary cursor-pointer p-1">
+<span class="material-symbols-outlined" style="font-size:24px;">close</span>
+</button>
+
+<div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto mb-3">
+<span class="material-symbols-outlined" style="font-size:28px;">chat</span>
+</div>
+
+<div class="masking-tape font-label-caps text-label-caps mb-2 transform -rotate-1 text-xs">
+External Redirect
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Order on WhatsApp</h3>
+<p class="font-body-md text-sm text-on-surface-variant mb-6 leading-relaxed">
+You are leaving the website to open WhatsApp and place your order directly with our Belagavi kitchen team (<strong class="text-on-surface">+91 8310786409</strong>).
+</p>
+
+<div class="flex flex-col sm:flex-row gap-3 justify-center">
+<button onclick="closeWhatsAppModal()" class="sketch-border bg-surface hover:bg-surface-container text-on-surface font-label-caps py-2.5 px-5 text-xs uppercase tracking-wider cursor-pointer">
+Cancel
+</button>
+<a id="whatsapp-redirect-btn" href="https://wa.me/918310786409?text=Hi%20Authana%20Belagavi!%20I%20would%20like%20to%20order%20food." target="_blank" rel="noopener" onclick="closeWhatsAppModal()" class="sketch-border sketch-shadow sketch-button bg-primary text-on-primary font-label-caps py-2.5 px-6 text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer">
+<span class="material-symbols-outlined" style="font-size:16px;">open_in_new</span> Proceed to WhatsApp
+</a>
+</div>
+</div>
+</div>
+
 <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const faqItems = document.querySelectorAll('.group');
-            faqItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    const content = item.querySelector('p');
-                    const icon = item.querySelector('.material-symbols-outlined');
-                    if (content.classList.contains('hidden')) {
-                        content.classList.remove('hidden');
-                        icon.style.transform = 'rotate(180deg)';
-                    } else {
-                        content.classList.add('hidden');
-                        icon.style.transform = 'rotate(0deg)';
-                    }
+    document.addEventListener('DOMContentLoaded', () => {
+        /* ── Scroll progress bar ── */
+        const bar = document.createElement('div');
+        bar.style.cssText = 'position:fixed;top:0;left:0;height:3px;background:#a33818;z-index:100;width:0%;transition:width 0.1s linear;pointer-events:none;';
+        document.body.appendChild(bar);
+        window.addEventListener('scroll', () => {
+            const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+            bar.style.width = Math.min(pct, 100) + '%';
+        });
+
+        /* ── FAQ accordion ── */
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.querySelector('.faq-answer');
+                const icon   = item.querySelector('.faq-icon');
+                const isOpen = answer.classList.contains('open');
+
+                document.querySelectorAll('.faq-item').forEach(other => {
+                    other.querySelector('.faq-answer').classList.remove('open');
+                    other.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+                    other.querySelector('.faq-icon').style.color = '';
                 });
+
+                if (!isOpen) {
+                    answer.classList.add('open');
+                    icon.style.transform = 'rotate(180deg)';
+                    icon.style.color = '#a33818';
+                }
             });
 
-            // Initialize language from local storage or default to EN
-            const savedLang = localStorage.getItem('messyKitchenLang') || 'EN';
-            document.getElementById('lang-switch-header').value = savedLang;
-            changeLanguage(savedLang);
+            item.setAttribute('tabindex', '0');
+            item.setAttribute('role', 'button');
+            item.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); item.click(); }
+            });
         });
+
+        /* ── Contact form toast ── */
+        const form  = document.querySelector('form');
+        const toast = document.getElementById('toast');
+        const toastMsg = document.getElementById('toast-msg');
+
+        if(form) {
+          form.addEventListener('submit', (e) => {
+              e.preventDefault();
+              const name  = form.querySelector('#name').value.trim();
+              const email = form.querySelector('#email').value.trim();
+              const msg   = form.querySelector('#message').value.trim();
+
+              if (!name || !email || !msg) {
+                  toastMsg.textContent = 'Please fill in all fields.';
+                  toast.style.background = '#ffdad6';
+                  showToast();
+                  return;
+              }
+
+              const lang = localStorage.getItem('mkLang') || 'EN';
+              const successMsgs = {
+                  EN: 'Note sent! We\'ll be in touch ✏️',
+                  KN: 'ಟಿಪ್ಪಣಿ ಕಳುಹಿಸಲಾಗಿದೆ! ✏️',
+                  HI: 'नोट भेजा गया! ✏️',
+                  MR: 'नोट पाठवला! ✏️'
+              };
+              toastMsg.textContent = successMsgs[lang] || successMsgs.EN;
+              toast.style.background = '';
+              form.reset();
+              showToast();
+          });
+        }
+
+        function showToast() {
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3500);
+        }
+
+        /* ── Language init ── */
+        const savedLang = (localStorage.getItem('mkLang')
+            || (localStorage.getItem('preferredLanguage') || '').toUpperCase()
+            || localStorage.getItem('selectedLang')
+            || 'EN').toUpperCase();
+        document.getElementById('lang-switch-header').value = savedLang;
+        changeLanguage(savedLang);
+
+        /* ── Mobile menu ── */
+        const mobileMenuBtn  = document.getElementById('mobile-menu-btn');
+        const mobileDrawer   = document.getElementById('mobile-drawer');
+        const mobileOverlay  = document.getElementById('mobile-overlay');
+        const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+
+        function openMobileMenu() {
+            mobileDrawer.classList.remove('hidden'); mobileDrawer.classList.add('flex');
+            mobileMenuIcon.textContent = 'close';
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMobileMenu() {
+            mobileDrawer.classList.add('hidden'); mobileDrawer.classList.remove('flex');
+            mobileMenuIcon.textContent = 'menu';
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+        if(mobileMenuBtn) mobileMenuBtn.addEventListener('click', () =>
+            mobileDrawer.classList.contains('hidden') ? openMobileMenu() : closeMobileMenu());
+        if(mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenu);
+    });
 
         const logos = {
             'EN': 'https://lh3.googleusercontent.com/aida/AP1WRLuZtSbXAFyM-zUJ4V7u5c4tleOcC6ECBFDl_Iac_Koqut2YTJjPU48WMXLDu0bN4nmSmvh8DewUt1RIgGYuJDhuSFHyGcTn_HcRNvt9PEmlJF7LehJn07XzRO1-zCdXAO08GElRR_MXM28h1_fe6TIJN2jI362fasHN1zi6_0qQpvsbN5yOntUw8W5RJmuAazshykDMW9JSidUDKw9UjJWSkng7NDI4AqfLHOMnGg8jhwCsxSbDoQmYGKYy',
@@ -323,130 +587,129 @@
 
         const i18n = {
             'EN': {
-                stats_1_title: '1 Month',
-                stats_1_desc: 'Since We Started the Mess',
-                stats_2_title: '50+',
-                stats_2_desc: 'Happy Tiffin Eaters',
+                stats_1_title: 'Belagavi Mess',
+                stats_1_desc: 'Serving Home-Cooked Food Daily',
+                stats_2_title: '500+',
+                stats_2_desc: 'Happy Belagavi Tiffin Eaters',
                 faq_title: 'Curious?',
-                faq_1_q: 'Why is it "Messy"?',
-                faq_1_a: 'We believe real food isn\'t perfectly styled. It\'s cooked with heart, splashed on the stove, and tastes like index. The "mess" is the process of genuine cooking, not a factory assembly line.',
-                faq_2_q: 'Where do you deliver?',
-                faq_2_a: 'Currently, we are keeping our radius tight to ensure the food stays hot and fresh. We serve the downtown core and university district. Check the menu page for exact boundaries.',
-                faq_3_q: 'Can I request modifications?',
-                faq_3_a: 'Our menu is fixed daily based on what\'s fresh at the market. However, we always offer a vegetarian alternative. We cannot accommodate complex allergies due to our shared kitchen space.',
+                faq_1_q: 'Why is everything ₹69?',
+                faq_1_a: 'We believe honest home food should be affordable for everyone in Belagavi. By cooking in batch thalis using seasonal local ingredients, we keep costs fair and transparent — strictly ₹69 for every dish.',
+                faq_2_q: 'Where do you deliver in Belagavi?',
+                faq_2_a: 'We deliver across Majagaon, Udyambag, Piranwadi, Angol, Mahaveer Nagar, Brahma Nagar, Tilakwadi, Bhagya Nagar, Vadgaon, Shahapur, Rani Chennamma Nagar, Machhe, Khasbag, and Chidambar Nagar.',
+                faq_3_q: 'What are your delivery times?',
+                faq_3_a: 'Our kitchen operates from 6 PM to 10 PM. We offer 8:00 PM delivery (order by 7:30 PM) and 10:00 PM delivery (order by 9:30 PM). Express Delivery (+₹20) arrives within 30 minutes of ordering.',
                 contact_title: 'Drop a Note',
-                contact_desc: 'Questions? Feedback? Just want to say hi?',
+                contact_desc: 'Questions? Feedback? Want to join our Belagavi home-cook network?',
                 contact_name: 'Name',
                 contact_name_ph: 'Your Name',
-                contact_email: 'Email',
-                contact_email_ph: 'your@email.com',
+                contact_email: 'Email / Phone',
+                contact_email_ph: 'your@email.com or phone',
                 contact_msg: 'Message',
                 contact_msg_ph: 'What\'s on your mind?',
                 contact_btn: 'Send Note',
-                cta_btn: 'Try Food Now',
-                cta_hint: 'It\'s good!',
+                cta_btn: 'Order Food Now (₹69)',
                 nav_story: 'Our Story',
                 nav_menu: 'The Menu',
                 nav_community: 'Community',
-                nav_try: 'Try Food'
+                nav_try: 'Order Food',
+                thali_label: 'Belagavi Special Thali ₹69'
             },
             'KN': {
-                stats_1_title: '1 ತಿಂಗಳು',
-                stats_1_desc: 'ನಾವು ಮೆಸ್ ಪ್ರಾರಂಭಿಸಿದಾಗಿನಿಂದ',
-                stats_2_title: '50+',
+                stats_1_title: 'ಬೆಳಗಾವಿ ಮೆಸ್',
+                stats_1_desc: 'ಪ್ರತಿದಿನ ಮನೆ ಊಟ ಪೂರೈಕೆ',
+                stats_2_title: '500+',
                 stats_2_desc: 'ಸಂತೋಷದ ಟಿಫಿನ್ ಗ್ರಾಹಕರು',
                 faq_title: 'ಕುತೂಹಲವಿದೆಯೇ?',
-                faq_1_q: 'ಇದು "ಮೆಸ್ಸಿ" ಏಕೆ?',
-                faq_1_a: 'ನಾವು ನಿಜವಾದ ಆಹಾರವನ್ನು ಪರಿಪೂರ್ಣವಾಗಿ ವಿನ್ಯಾಸಗೊಳಿಸಿಲ್ಲ ಎಂದು ನಂಬುತ್ತೇವೆ. ಇದು ಹೃದಯದಿಂದ ಬೇಯಿಸಲಾಗುತ್ತದೆ, ಒಲೆಯ ಮೇಲೆ ಚಿಮ್ಮುತ್ತದೆ ಮತ್ತು ಮನೆಯ ರುಚಿಯನ್ನು ಹೊಂದಿರುತ್ತದೆ.',
-                faq_2_q: 'ನೀವು ಎಲ್ಲಿ ತಲುಪಿಸುತ್ತೀರಿ?',
-                faq_2_a: 'ಪ್ರಸ್ತುತ, ಆಹಾರ ಬಿಸಿಯಾಗಿರಲು ನಾವು ನಮ್ಮ ವ್ಯಾಪ್ತಿಯನ್ನು ಬಿಗಿಯಾಗಿ ಇರಿಸಿದ್ದೇವೆ. ನಿಖರವಾದ ಗಡಿಗಳಿಗಾಗಿ ಮೆನು ಪುಟವನ್ನು ಪರಿಶೀಲಿಸಿ.',
-                faq_3_q: 'ನಾನು ಬದಲಾವಣೆಗಳನ್ನು ವಿನಂತಿಸಬಹುದೇ?',
-                faq_3_a: 'ಮಾರುಕಟ್ಟೆಯಲ್ಲಿ ತಾಜಾವಾಗಿರುವುದನ್ನು ಆಧರಿಸಿ ನಮ್ಮ ಮೆನು ಪ್ರತಿದಿನ ನಿಗದಿಪಡಿಸಲಾಗಿದೆ. ಆದಾಗ್ಯೂ, ನಾವು ಯಾವಾಗಲೂ ಸಸ್ಯಾಹಾರಿ ಪರ್ಯಾಯವನ್ನು ನೀಡುತ್ತೇವೆ.',
+                faq_1_q: 'ಎಲ್ಲವೂ ₹69 ಏಕೆ?',
+                faq_1_a: 'ಪ್ರಾಮಾಣಿಕ ಮನೆ ಆಹಾರವು ಬೆಳಗಾವಿಯ ಪ್ರತಿಯೊಬ್ಬರಿಗೂ ಕೈಗೆಟುಕುವಂತಿರಬೇಕು ಎಂದು ನಾವು ನಂಬುತ್ತೇವೆ. ಕಟ್ಟುನಿಟ್ಟಾಗಿ ₹69.',
+                faq_2_q: 'ಬೆಳಗಾವಿಯಲ್ಲಿ ಎಲ್ಲಿ ಡೆಲಿವರಿ ಮಾಡುತ್ತೀರಿ?',
+                faq_2_a: 'ನಾವು ಮಜಗಾಂವ, ಉದ್ಯಮಬಾಗ, ಪೀರನವಾಡಿ, ಅಂಗೋಲ, ಮಹಾವೀರ ನಗರ, ಬ್ರಹ್ಮ ನಗರ, ತಿಳಕವಾಡಿ, ಭಾಗ್ಯ ನಗರ, ವಡಗಾಂವ, ಶಹಾಪುರ, ರಾಣಿ ಚನ್ನಮ್ಮ ನಗರ, ಮಚ್ಚೆ, ಖಾಸ್ಬಾಗ ಮತ್ತು ಚಿದಂಬರ ನಗರದಲ್ಲಿ ಡೆಲಿವರಿ ಮಾಡುತ್ತೇವೆ.',
+                faq_3_q: 'ಡೆಲಿವರಿ ಸಮಯ ಯಾವುದು?',
+                faq_3_a: 'ನಮ್ಮ ಅಡುಗೆಮನೆ ಸಂಜೆ 6 ರಿಂದ 10 ರವರೆಗೆ ಇರುತ್ತದೆ. 8 PM ಮತ್ತು 10 PM ಗೆ ಡೆಲಿವರಿ ಸ್ಲಾಟ್‌ಗಳು (ಅಥವಾ 30 ನಿಮಿಷಗಳ ಎಕ್ಸ್‌ಪ್ರೆಸ್ ಡೆಲಿವರಿ +₹20).',
                 contact_title: 'ಒಂದು ಟಿಪ್ಪಣಿ ಬರೆಯಿರಿ',
-                contact_desc: 'ಪ್ರಶ್ನೆಗಳಿವೆಯೇ? ಪ್ರತಿಕ್ರಿಯೆ? ಹಲೋ ಹೇಳಬೇಕೆ?',
+                contact_desc: 'ಪ್ರಶ್ನೆಗಳಿವೆಯೇ? ಪ್ರತಿಕ್ರಿಯೆ?',
                 contact_name: 'ಹೆಸರು',
                 contact_name_ph: 'ನಿಮ್ಮ ಹೆಸರು',
-                contact_email: 'ಇಮೇಲ್',
-                contact_email_ph: 'ನಿಮ್ಮ@email.com',
+                contact_email: 'ಇಮೇಲ್ / ಫೋನ್',
+                contact_email_ph: 'ನಿಮ್ಮ@email.com ಅಥವಾ ಫೋನ್',
                 contact_msg: 'ಸಂದೇಶ',
                 contact_msg_ph: 'ನಿಮ್ಮ ಮನಸ್ಸಿನಲ್ಲಿ ಏನಿದೆ?',
                 contact_btn: 'ಟಿಪ್ಪಣಿ ಕಳುಹಿಸಿ',
-                cta_btn: 'ಈಗಲೇ ಆಹಾರ ಪ್ರಯತ್ನಿಸಿ',
-                cta_hint: 'ಇದು ಚೆನ್ನಾಗಿದೆ!',
+                cta_btn: 'ಆಹಾರ ಆರ್ಡರ್ ಮಾಡಿ (₹69)',
                 nav_story: 'ನಮ್ಮ ಕಥೆ',
                 nav_menu: 'ಮೆನು',
                 nav_community: 'ಸಮುದಾಯ',
-                nav_try: 'ಆಹಾರ ಪ್ರಯತ್ನಿಸಿ'
+                nav_try: 'ಆಹಾರ ಆರ್ಡರ್ ಮಾಡಿ',
+                thali_label: 'ಬೆಳಗಾವಿ ವಿಶೇಷ ಥಾಲಿ ₹69'
             },
             'HI': {
-                stats_1_title: '1 महीना',
-                stats_1_desc: 'जब से हमने मेस शुरू किया',
-                stats_2_title: '50+',
-                stats_2_desc: 'खुश टिफिन खाने वाले',
+                stats_1_title: 'बेलगावी मेस',
+                stats_1_desc: 'प्रतिदिन घरेलू भोजन',
+                stats_2_title: '500+',
+                stats_2_desc: 'खुश टिफिन ग्राहक',
                 faq_title: 'उत्सुक हैं?',
-                faq_1_q: 'यह "मेसी" क्यों है?',
-                faq_1_a: 'हमारा मानना ​​है कि असली खाना पूरी तरह से स्टाइल नहीं होता है। इसे दिल से पकाया जाता है, और इसका स्वाद घर जैसा होता है।',
-                faq_2_q: 'आप कहाँ डिलीवरी करते हैं?',
-                faq_2_a: 'वर्तमान में, हम यह सुनिश्चित करने के लिए अपना दायरा तंग रख रहे हैं कि खाना गर्म और ताजा रहे। सटीक सीमाओं के लिए मेनू पृष्ठ देखें।',
-                faq_3_q: 'क्या मैं संशोधनों का अनुरोध कर सकता हूँ?',
-                faq_3_a: 'हमारा मेनू बाजार में जो ताजा है उसके आधार पर प्रतिदिन तय किया जाता है। हालाँकि, हम हमेशा एक शाकाहारी विकल्प प्रदान करते हैं।',
-                contact_title: 'एक नोट छोड़ें',
-                contact_desc: 'प्रश्न? प्रतिक्रिया? बस नमस्ते कहना चाहते हैं?',
+                faq_1_q: 'सब कुछ ₹69 क्यों है?',
+                faq_1_a: 'हमारा मानना ​​है कि बेलगावी में हर किसी के लिए घर का बना भोजन किफायती होना चाहिए। हर व्यंजन केवल ₹69।',
+                faq_2_q: 'बेलगावी में आप कहाँ डिलीवरी करते हैं?',
+                faq_2_a: 'हम मजगांव, उद्यमबाग, पीरनवाड़ी, अंगोल, महावीर नगर, ब्रह्मा नगर, तिलकवाड़ी, भाग्य नगर, वडगांव, शाहपुर, रानी चेन्नम्मा नगर, मच्छे, खासबाग और चिदंबर नगर में डिलीवरी करते हैं।',
+                faq_3_q: 'डिलीवरी का समय क्या है?',
+                faq_3_a: 'रसोई शाम 6 से 10 बजे तक चलती है। 8 PM और 10 PM डिलीवरी स्लॉट (या 30 मिनट एक्सप्रेस डिलीवरी +₹20)।',
+                contact_title: 'नोट भेजें',
+                contact_desc: 'प्रश्न? प्रतिक्रिया?',
                 contact_name: 'नाम',
                 contact_name_ph: 'आपका नाम',
-                contact_email: 'ईमेल',
-                contact_email_ph: 'आपका@email.com',
+                contact_email: 'ईमेल / फोन',
+                contact_email_ph: 'आपका@email.com या फोन',
                 contact_msg: 'संदेश',
                 contact_msg_ph: 'आपके दिमाग में क्या है?',
                 contact_btn: 'नोट भेजें',
-                cta_btn: 'अभी खाना आजमाएं',
-                cta_hint: 'यह अच्छा है!',
+                cta_btn: 'खाना ऑर्डर करें (₹69)',
                 nav_story: 'हमारी कहानी',
                 nav_menu: 'मेनू',
                 nav_community: 'समुदाय',
-                nav_try: 'खाना आजमाएं'
+                nav_try: 'खाना ऑर्डर करें',
+                thali_label: 'बेलगावी स्पेशल थाली ₹69'
             },
             'MR': {
-                stats_1_title: '1 महिना',
-                stats_1_desc: 'जेव्हापासून आम्ही मेस सुरू केली',
-                stats_2_title: '50+',
+                stats_1_title: 'बेळगाव मेस',
+                stats_1_desc: 'दररोज घरगुती जेवण',
+                stats_2_title: '500+',
                 stats_2_desc: 'आनंदी टिफिन खाणारे',
                 faq_title: 'उत्सुक आहात?',
-                faq_1_q: 'हे "मेसी" का आहे?',
-                faq_1_a: 'आमचा विश्वास आहे की खरे अन्न पूर्णपणे स्टाईल केलेले नसते. ते हृदयापासून शिजवले जाते आणि घरासारखी चव असते.',
-                faq_2_q: 'तुम्ही कुठे डिलिव्हरी करता?',
-                faq_2_a: 'सध्या, अन्न गरम आणि ताजे राहावे यासाठी आम्ही आमची त्रिज्या घट्ट ठेवत आहोत. अचूक सीमांसाठी मेनू पृष्ठ तपासा.',
-                faq_3_q: 'मी बदलांची विनंती करू शकतो का?',
-                faq_3_a: 'बाजारात जे ताजे आहे त्यावर आधारित आमचा मेनू दररोज निश्चित केला जातो. तथापि, आम्ही नेहमी शाकाहारी पर्याय देतो.',
-                contact_title: 'एक नोट लिहा',
-                contact_desc: 'प्रश्न? अभिप्राय? फक्त हॅलो म्हणायचे आहे?',
+                faq_1_q: 'सर्व काही ₹69 का आहे?',
+                faq_1_a: 'आमचा विश्वास आहे की बेळगावातील प्रत्येकासाठी घरगुती अन्न परवडणारे असावे. प्रत्येक पदार्थ फक्त ₹69.',
+                faq_2_q: 'बेळगावात कुठे डिलिव्हरी करता?',
+                faq_2_a: 'आम्ही माजगाव, उद्यमबाग, पीरनवाडी, अनगोळ, महावीर नगर, ब्रह्मा नगर, टिळकवाडी, भाग्य नगर, वडगाव, शहापूर, राणी चन्नम्मा नगर, मच्छे, खासबाग आणि चिदंबर नगरमध्ये डिलिव्हरी करतो.',
+                faq_3_q: 'डिलिव्हरीच्या वेळा कोणत्या?',
+                faq_3_a: 'संध्याकाळी 6 ते 10 वाजेपर्यंत. 8 PM आणि 10 PM डिलिव्हरी स्लॉट (किंवा 30 मिनिटांची एक्सप्रेस डिलिव्हरी +₹20).',
+                contact_title: 'नोट पाठवा',
+                contact_desc: 'प्रश्न? अभिप्राय?',
                 contact_name: 'नाव',
                 contact_name_ph: 'तुमचे नाव',
-                contact_email: 'ईमेल',
-                contact_email_ph: 'तुमचे@email.com',
+                contact_email: 'ईमेल / फोन',
+                contact_email_ph: 'तुमचे@email.com किंवा फोन',
                 contact_msg: 'संदेश',
                 contact_msg_ph: 'तुमच्या मनात काय आहे?',
                 contact_btn: 'नोट पाठवा',
-                cta_btn: 'आता अन्न वापरून पहा',
-                cta_hint: 'हे चांगले आहे!',
+                cta_btn: 'अन्न ऑर्डर करा (₹69)',
                 nav_story: 'आमची कथा',
                 nav_menu: 'मेनू',
                 nav_community: 'समुदाय',
-                nav_try: 'अन्न वापरून पहा'
+                nav_try: 'अन्न ऑर्डर करा',
+                thali_label: 'बेळगाव स्पेशल थाळी ₹69'
             }
         };
 
         function changeLanguage(lang) {
-            localStorage.setItem('messyKitchenLang', lang);
-            
-            // Update Logos
+            localStorage.setItem('mkLang', lang);
             document.getElementById('header-logo').src = logos[lang];
             const footerLogo = document.getElementById('footer-logo');
             if(footerLogo) footerLogo.src = logos[lang];
             
             document.getElementById('lang-switch-header').value = lang;
+            const mobSwitch = document.getElementById('lang-switch-mobile');
+            if (mobSwitch) mobSwitch.value = lang;
 
-            // Update Text Content
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (i18n[lang] && i18n[lang][key]) {
@@ -454,7 +717,13 @@
                 }
             });
 
-            // Update Placeholders
+            document.querySelectorAll('[data-i18n-mob]').forEach(el => {
+                const key = el.getAttribute('data-i18n-mob');
+                if (i18n[lang] && i18n[lang][key]) {
+                    el.textContent = i18n[lang][key];
+                }
+            });
+
             document.querySelectorAll('[data-i18n-ph]').forEach(el => {
                 const key = el.getAttribute('data-i18n-ph');
                 if (i18n[lang] && i18n[lang][key]) {
@@ -462,5 +731,33 @@
                 }
             });
         }
+
+        // WHATSAPP REDIRECT WARNING MODAL LOGIC
+        function openOrderModal(itemName) {
+            const redirectBtn = document.getElementById('whatsapp-redirect-btn');
+            let targetWhatsAppUrl = 'https://wa.me/918310786409?text=Hi%20Authana%20Belagavi!%20I%20would%20like%20to%20order%20food.';
+            if(itemName) {
+                targetWhatsAppUrl = `https://wa.me/918310786409?text=Hi%20Authana%20Belagavi!%20I%20would%20like%20to%20order%20${encodeURIComponent(itemName)}%20(%E2%82%B969).`;
+            }
+            if(redirectBtn) {
+                redirectBtn.href = targetWhatsAppUrl;
+            }
+            const modal = document.getElementById('whatsapp-warning-modal');
+            if(modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeWhatsAppModal() {
+            const modal = document.getElementById('whatsapp-warning-modal');
+            if(modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = 'auto';
+            }
+        }
     </script>
-</body></html>
+</body>
+</html>
